@@ -1,9 +1,10 @@
 # TESTS
 
 This document lists every evaluation performed for the paper
-**"IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Assistant
-for OpenFOAM-Based Computational Fluid Dynamics"** (Physics of
-Fluids, 2026), the prompt / input each test received, the scoring
+**"IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End
+for OpenFOAM-Based Computational Fluid Dynamics"** (submitted to
+Computer Physics Communications, 2026), the prompt / input each
+test received, the scoring
 rule, and the recorded outcome, together with the artefact in this
 repository that backs each number.
 

@@ -2,9 +2,9 @@
 
 Companion evaluation artefacts for the paper
 
-> **IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Assistant
+> **IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End
 > for OpenFOAM-Based Computational Fluid Dynamics.**
-> P. Kumar *et al.*, submitted to *Physics of Fluids*, 2026.
+> P. Kumar, submitted to *Computer Physics Communications*, 2026.
 
 This repository ships **only the benchmark and evaluation code** needed
 to reproduce the retrieval-tier numbers reported in the paper and to
@@ -182,10 +182,10 @@ Contact: **pratyush.ethz@gmail.com** (Pratyush Kumar, IteraSim).
 
 ```bibtex
 @article{KumarIteraSim2026,
-  author  = {Kumar, P. and others},
+  author  = {Kumar, Pratyush},
   title   = {{IteraSim RAG}: A Multi-Stage Retrieval-Augmented Agentic
-             Assistant for {OpenFOAM}-Based Computational Fluid Dynamics},
-  journal = {Physics of Fluids},
+             Back-End for {OpenFOAM}-Based Computational Fluid Dynamics},
+  journal = {Computer Physics Communications},
   year    = {2026},
   note    = {Submitted}
 }
