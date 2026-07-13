@@ -1,0 +1,916 @@
+[
+  {
+    "case_id": "A1",
+    "category": "A",
+    "title": "Cavity Flow (Laminar, Incompressible)",
+    "tool": "openfoam",
+    "query": "Set up and run a 2D lid-driven cavity flow simulation in OpenFOAM.\nThe domain is a unit square. The top wall moves in the x-direction at\n1 m/s. All other walls are stationary no-slip. The fluid is water.\nRun until t = 0.5 s with deltaT = 0.005 s. Use icoFoam.",
+    "expected_solver": "icofoam",
+    "expected_files": [
+      "blockmeshdict",
+      "u",
+      "p",
+      "transportproperties",
+      "controldict",
+      "fvsolution",
+      "fvschemes"
+    ],
+    "expected_key_checks": [
+      "codedfixedvalue"
+    ],
+    "expected_physics_tags": [
+      "blockmeshdict",
+      "codedfixedvalue",
+      "controldict",
+      "fvschemes",
+      "fvsolution",
+      "icofoam",
+      "openfoam",
+      "p",
+      "transportproperties",
+      "u"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "A2",
+    "category": "A",
+    "title": "PitzDaily (Turbulent, RANS)",
+    "tool": "openfoam",
+    "query": "Set up a steady-state turbulent flow simulation through the PitzDaily\nbackward-facing step geometry in OpenFOAM. Use the k-epsilon\nturbulence model with simpleFoam. Inlet velocity = 10 m/s.\nUse the standard PitzDaily mesh from OpenFOAM tutorials.",
+    "expected_solver": "simplefoam",
+    "expected_files": [
+      "u",
+      "p",
+      "k",
+      "epsilon",
+      "nut",
+      "turbulenceproperties",
+      "transportproperties"
+    ],
+    "expected_key_checks": [
+      "turbulenceproperties",
+      "rasmodel kepsilon;"
+    ],
+    "expected_physics_tags": [
+      "epsilon",
+      "k",
+      "nut",
+      "openfoam",
+      "p",
+      "rasmodel kepsilon;",
+      "simplefoam",
+      "transportproperties",
+      "turbulenceproperties",
+      "u"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "A3",
+    "category": "A",
+    "title": "Hotroom (Buoyancy-Driven Natural Convection)",
+    "tool": "openfoam",
+    "query": "Simulate turbulent natural convection in a tall 2D rectangular cavity\nusing OpenFOAM. The bottom wall is heated (T = 320 K) and the top\nwall is cold (T = 300 K). Left and right walls are adiabatic. Use the\nk-epsilon turbulence model. Use buoyantBoussinesqSimpleFoam.\nReference temperature is 310 K. Fluid is air.",
+    "expected_solver": "buoyantboussinesqsimplefoam",
+    "expected_files": [
+      "t",
+      "u",
+      "p_rgh",
+      "k",
+      "epsilon",
+      "nut",
+      "alphat",
+      "thermophysicalproperties",
+      "g"
+    ],
+    "expected_key_checks": [
+      "g",
+      "(0 -9.81 0)"
+    ],
+    "expected_physics_tags": [
+      "(0 -9.81 0)",
+      "alphat",
+      "buoyantboussinesqsimplefoam",
+      "epsilon",
+      "g",
+      "k",
+      "nut",
+      "openfoam",
+      "p_rgh",
+      "t",
+      "thermophysicalproperties",
+      "u"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "A4",
+    "category": "A",
+    "title": "Dam Break (Multiphase VOF)",
+    "tool": "openfoam",
+    "query": "Set up a 2D dam break simulation in OpenFOAM using the VOF\nmultiphase solver interFoam. The tank is a 2D square domain.\nA column of water occupies the left third of the tank at t=0.\nThe top boundary is open (atmosphere). All other boundaries are walls.\nThere is a rectangular obstacle at the centre of the bottom wall.\nRun for 1 second.",
+    "expected_solver": "interfoam",
+    "expected_files": [
+      "alpha.water",
+      "u",
+      "p_rgh",
+      "setfieldsdict",
+      "transportproperties",
+      "g"
+    ],
+    "expected_key_checks": [
+      "setfieldsdict",
+      "boxtocell"
+    ],
+    "expected_physics_tags": [
+      "alpha.water",
+      "boxtocell",
+      "g",
+      "interfoam",
+      "openfoam",
+      "p_rgh",
+      "setfieldsdict",
+      "transportproperties",
+      "u"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "A5",
+    "category": "A",
+    "title": "Particle Column (Multiphase Lagrangian MPPIC)",
+    "tool": "openfoam",
+    "query": "Set up a 2D particle column simulation in OpenFOAM using MPPICFoam.\nThe domain is a vertical rectangular column with an inlet at the top\nand an outlet at the bottom. Fluid is air (incompressible).\nParticles have diameter 1e-3 m, density 1000 kg/m\u00b3.\nInclude gravity. Particle-particle collisions should be modelled\nusing the MPPIC approach.",
+    "expected_solver": "mppicfoam",
+    "expected_files": [
+      "kinematiccloudproperties",
+      "u",
+      "p",
+      "cloudproperties",
+      "injectionmodels"
+    ],
+    "expected_key_checks": [
+      "mppiccloud",
+      "packingmodel"
+    ],
+    "expected_physics_tags": [
+      "cloudproperties",
+      "injectionmodels",
+      "kinematiccloudproperties",
+      "mppiccloud",
+      "mppicfoam",
+      "openfoam",
+      "p",
+      "packingmodel",
+      "u"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "A6",
+    "category": "A",
+    "title": "Mixed Vessel (Rotating Geometry, MRF)",
+    "tool": "openfoam",
+    "query": "Simulate flow in a 2D rotating mixer using OpenFOAM.\nThe outer cylindrical wall is stationary. The inner wall rotates at\n10 rad/s about the z-axis. There are 4 rectangular baffles\non both inner and outer walls. Use pimpleFoam. The fluid is water.\nUse the k-epsilon turbulence model.",
+    "expected_solver": "pimplefoam",
+    "expected_files": [
+      "mrfproperties",
+      "u",
+      "p",
+      "k",
+      "epsilon",
+      "nut",
+      "fvoptions"
+    ],
+    "expected_key_checks": [
+      "mrfzonelist",
+      "omega"
+    ],
+    "expected_physics_tags": [
+      "epsilon",
+      "fvoptions",
+      "k",
+      "mrfproperties",
+      "mrfzonelist",
+      "nut",
+      "omega",
+      "openfoam",
+      "p",
+      "pimplefoam",
+      "u"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "B1",
+    "category": "B",
+    "title": "Cavity \u2192 PitzDaily (Geometry Generalisation)",
+    "tool": "openfoam",
+    "query": "[Example: Here is a complete working cavity flow setup: ...]\n\nNow set up the PitzDaily case using simpleFoam with k-epsilon.\nInlet velocity = 10 m/s. Use the same numerical scheme structure as\nthe cavity case but adapt for turbulent flow.",
+    "expected_solver": "simpleFoam",
+    "expected_files": [],
+    "expected_key_checks": [
+      "k",
+      "epsilon"
+    ],
+    "expected_physics_tags": [
+      "epsilon",
+      "k",
+      "openfoam",
+      "simplefoam"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "B2",
+    "category": "B",
+    "title": "PitzDaily \u2192 Hotroom (Solver Transfer)",
+    "tool": "openfoam",
+    "query": "[Example: Here is a complete PitzDaily simpleFoam setup: ...]\n\nNow set up a natural convection simulation in a tall heated cavity\nusing buoyantBoussinesqSimpleFoam. Bottom wall T = 330 K,\ntop wall T = 290 K, side walls adiabatic. Fluid is air.",
+    "expected_solver": "simpleFoam",
+    "expected_files": [],
+    "expected_key_checks": [
+      "pr",
+      "beta"
+    ],
+    "expected_physics_tags": [
+      "beta",
+      "openfoam",
+      "pr",
+      "simplefoam"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "B3",
+    "category": "B",
+    "title": "Cavity \u2192 Unsteady Cavity (Time-stepping generalisation)",
+    "tool": "openfoam",
+    "query": "[Example: Steady cavity flow setup...]\n\nNow modify this to run as a transient simulation using pimpleFoam.\nThe top wall velocity should be unsteady: U = 5*sin(2*pi*t/0.1) m/s.\nRun for 0.5 seconds with deltaT = 0.001 s, writing every 0.05 s.",
+    "expected_solver": "pimpleFoam",
+    "expected_files": [],
+    "expected_key_checks": [
+      "code",
+      "u"
+    ],
+    "expected_physics_tags": [
+      "code",
+      "openfoam",
+      "pimplefoam",
+      "u"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "B4",
+    "category": "B",
+    "title": "Dam Break \u2192 Bubble Column (Multiphase Transfer)",
+    "tool": "openfoam",
+    "query": "[Example: Dam break interFoam setup...]\n\nNow set up a 2D bubble column simulation. Air bubbles are injected\nfrom the bottom of a water-filled rectangular tank at a velocity of\n0.1 m/s. Use interFoam with gravity. Domain: 0.1 m wide, 0.5 m tall.",
+    "expected_solver": "interFoam",
+    "expected_files": [],
+    "expected_key_checks": [
+      "inletoutlet",
+      "fixedvalue",
+      "alpha.air"
+    ],
+    "expected_physics_tags": [
+      "alpha.air",
+      "fixedvalue",
+      "inletoutlet",
+      "interfoam",
+      "openfoam"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C1",
+    "category": "C",
+    "title": "Cavity: Inlet Velocity Change",
+    "tool": "openfoam",
+    "query": "Increase the top wall velocity from 1 m/s to 5 m/s.\nUpdate all relevant files.",
+    "expected_solver": "any",
+    "expected_files": [
+      "u"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "openfoam",
+      "u"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C2",
+    "category": "C",
+    "title": "Cavity: Unsteady Sinusoidal BC",
+    "tool": "openfoam",
+    "query": "Change the top wall velocity to an unsteady condition:\nU_x = 5 * sin(2*pi*t/0.1) m/s. The simulation should remain transient.",
+    "expected_solver": "any",
+    "expected_files": [
+      "u",
+      "codedfixedvalue"
+    ],
+    "expected_key_checks": [
+      "code"
+    ],
+    "expected_physics_tags": [
+      "code",
+      "codedfixedvalue",
+      "openfoam",
+      "u"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C3",
+    "category": "C",
+    "title": "PitzDaily: Mesh Refinement",
+    "tool": "openfoam",
+    "query": "Increase the mesh resolution by a factor of 2 in both x and y\ndirections. Update blockMeshDict accordingly.",
+    "expected_solver": "any",
+    "expected_files": [
+      "blockmeshdict"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "blockmeshdict",
+      "openfoam"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C4",
+    "category": "C",
+    "title": "Hotroom: Temperature Boundary Condition Change",
+    "tool": "openfoam",
+    "query": "Change the hot wall temperature from 320 K to 350 K\nand the cold wall temperature from 300 K to 280 K.",
+    "expected_solver": "any",
+    "expected_files": [
+      "t"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "openfoam",
+      "t"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C5",
+    "category": "C",
+    "title": "Hotroom: Thermophysical Property Change",
+    "tool": "openfoam",
+    "query": "Change the working fluid from air to water.\nUpdate all relevant thermophysical properties including density,\ndynamic viscosity, thermal conductivity, and specific heat.",
+    "expected_solver": "any",
+    "expected_files": [
+      "thermophysicalproperties",
+      "transportproperties"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "openfoam",
+      "thermophysicalproperties",
+      "transportproperties"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C6",
+    "category": "C",
+    "title": "Dam Break: setFields \u2014 Change Water Column Position",
+    "tool": "openfoam",
+    "query": "Move the initial water column from the left third of the tank\nto the right third. Update setFieldsDict accordingly.",
+    "expected_solver": "any",
+    "expected_files": [
+      "setfieldsdict",
+      "boxtocell"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "boxtocell",
+      "openfoam",
+      "setfieldsdict"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C7",
+    "category": "C",
+    "title": "Dam Break: Change Liquid from Water to Oil",
+    "tool": "openfoam",
+    "query": "Change the liquid from water to oil. Use density = 900 kg/m\u00b3\nand kinematic viscosity = 1e-4 m\u00b2/s for the oil phase.",
+    "expected_solver": "any",
+    "expected_files": [
+      "transportproperties",
+      "rho",
+      "nu"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "nu",
+      "openfoam",
+      "rho",
+      "transportproperties"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C8",
+    "category": "C",
+    "title": "Particle Column: Change Particle Diameter and Density",
+    "tool": "openfoam",
+    "query": "Change the particle diameter from 1 mm to 0.5 mm\nand the particle density from 1000 kg/m\u00b3 to 2500 kg/m\u00b3.\nUpdate all relevant property files.",
+    "expected_solver": "any",
+    "expected_files": [
+      "kinematiccloudproperties",
+      "d",
+      "rho"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "d",
+      "kinematiccloudproperties",
+      "openfoam",
+      "rho"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C9",
+    "category": "C",
+    "title": "Mixed Vessel: Change Angular Velocity",
+    "tool": "openfoam",
+    "query": "Change the inner wall rotation speed from 10 rad/s to 20 rad/s.\nUpdate all relevant MRF settings.",
+    "expected_solver": "any",
+    "expected_files": [
+      "mrfproperties",
+      "omega"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "mrfproperties",
+      "omega",
+      "openfoam"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "C10",
+    "category": "C",
+    "title": "PitzDaily: endTime and Write Interval Change",
+    "tool": "openfoam",
+    "query": "Change the simulation endTime from 500 to 1000 iterations.\nWrite results every 100 iterations instead of every 50.",
+    "expected_solver": "any",
+    "expected_files": [
+      "controldict"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "controldict",
+      "openfoam"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "D1",
+    "category": "D",
+    "title": "kEpsilon \u2192 RNG kEpsilon (PitzDaily)",
+    "tool": "openfoam",
+    "query": "Switch the turbulence model from standard k-epsilon to\nRNG k-epsilon. Update all relevant files.",
+    "expected_solver": "any",
+    "expected_files": [
+      "turbulenceproperties",
+      "rasmodel rngkepsilon"
+    ],
+    "expected_key_checks": [
+      "rngkepsilon",
+      "rngkepsilon"
+    ],
+    "expected_physics_tags": [
+      "openfoam",
+      "rasmodel rngkepsilon",
+      "rngkepsilon",
+      "turbulenceproperties"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "D2",
+    "category": "D",
+    "title": "kEpsilon \u2192 kOmegaSST (PitzDaily)",
+    "tool": "openfoam",
+    "query": "Switch the turbulence model from k-epsilon to k-omega SST.\nEnsure all required boundary conditions and initial fields\nare updated correctly.",
+    "expected_solver": "any",
+    "expected_files": [
+      "epsilon",
+      "omega",
+      "nut",
+      "nutlowrewallfunction"
+    ],
+    "expected_key_checks": [
+      "omega",
+      "omegawallfunction",
+      "epsilonwallfunction"
+    ],
+    "expected_physics_tags": [
+      "epsilon",
+      "epsilonwallfunction",
+      "nut",
+      "nutlowrewallfunction",
+      "omega",
+      "omegawallfunction",
+      "openfoam"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "D3",
+    "category": "D",
+    "title": "kEpsilon \u2192 LRR Reynolds Stress Model (PitzDaily)",
+    "tool": "openfoam",
+    "query": "Switch from k-epsilon to the Launder-Reece-Rodi (LRR)\nReynolds stress model. Add all required Reynolds stress\ntensor components as new field files.",
+    "expected_solver": "any",
+    "expected_files": [
+      "r",
+      "epsilon"
+    ],
+    "expected_key_checks": [
+      "r"
+    ],
+    "expected_physics_tags": [
+      "epsilon",
+      "openfoam",
+      "r"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "D4",
+    "category": "D",
+    "title": "kEpsilon \u2192 kkLOmega (Three-equation model, PitzDaily)",
+    "tool": "openfoam",
+    "query": "Switch the turbulence model to the three-equation eddy-viscosity model\nk-kl-omega (kkLOmega). This model requires additional transport\nequations. Update all boundary conditions and initial fields.",
+    "expected_solver": "any",
+    "expected_files": [
+      "kl",
+      "omega",
+      "turbulenceproperties"
+    ],
+    "expected_key_checks": [
+      "kklomega",
+      "sigmak",
+      "sigmal"
+    ],
+    "expected_physics_tags": [
+      "kklomega",
+      "kl",
+      "omega",
+      "openfoam",
+      "sigmak",
+      "sigmal",
+      "turbulenceproperties"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "D5",
+    "category": "D",
+    "title": "Laminar \u2192 kEpsilon (Cavity flow, adding turbulence)",
+    "tool": "openfoam",
+    "query": "Convert the cavity flow simulation from laminar icoFoam to turbulent\nflow using simpleFoam with the k-epsilon RANS model.\nAdd all required turbulence files and update boundary conditions.",
+    "expected_solver": "icoFoam",
+    "expected_files": [
+      "k",
+      "epsilon",
+      "nut",
+      "turbulenceproperties",
+      "simplefoam"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "epsilon",
+      "icofoam",
+      "k",
+      "nut",
+      "openfoam",
+      "simplefoam",
+      "turbulenceproperties"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "D6",
+    "category": "D",
+    "title": "LES dynamicKEqn \u2192 Smagorinsky (Hotroom)",
+    "tool": "openfoam",
+    "query": "Switch the LES turbulence model from dynamicKEqn to the standard\nSmagorinsky model. Update turbulenceProperties and any\naffected boundary conditions.",
+    "expected_solver": "any",
+    "expected_files": [
+      "turbulenceproperties",
+      "lesmodel smagorinsky"
+    ],
+    "expected_key_checks": [
+      "k",
+      "epsilon"
+    ],
+    "expected_physics_tags": [
+      "epsilon",
+      "k",
+      "lesmodel smagorinsky",
+      "openfoam",
+      "turbulenceproperties"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "D7",
+    "category": "D",
+    "title": "RANS kEpsilon \u2192 kOmegaSST (Hotroom buoyancy case)",
+    "tool": "openfoam",
+    "query": "Switch the buoyantBoussinesqSimpleFoam hotroom simulation from\nk-epsilon to k-omega SST turbulence model.\nEnsure all wall functions and initial fields are consistent.",
+    "expected_solver": "buoyantBoussinesqSimpleFoam",
+    "expected_files": [
+      "omega",
+      "omegawallfunction",
+      "nut"
+    ],
+    "expected_key_checks": [],
+    "expected_physics_tags": [
+      "buoyantboussinesqsimplefoam",
+      "nut",
+      "omega",
+      "omegawallfunction",
+      "openfoam"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "D8",
+    "category": "D",
+    "title": "Laminar \u2192 kEpsilon (Mixed vessel \u2014 most complex)",
+    "tool": "openfoam",
+    "query": "Add turbulence to the rotating mixer simulation using the\nk-epsilon model. Ensure turbulence boundary conditions are\nconsistent with the rotating MRF zone and the stationary outer wall.",
+    "expected_solver": "any",
+    "expected_files": [
+      "k",
+      "epsilon",
+      "nut"
+    ],
+    "expected_key_checks": [
+      "k",
+      "epsilon"
+    ],
+    "expected_physics_tags": [
+      "epsilon",
+      "k",
+      "nut",
+      "openfoam"
+    ],
+    "expected_primary_intent": "solver_config"
+  },
+  {
+    "case_id": "E1",
+    "category": "E",
+    "title": "SIGFPE in compressible solver",
+    "tool": "openfoam",
+    "query": "My rhoPimpleFoam case crashes with a floating point exception (SIGFPE)\nin hePsiThermo::calculate after a few hundred time steps. The log shows\nCourant Number max climbing above 5 and the pressure field has negative\nvalues near the outlet. How do I diagnose and fix this?",
+    "expected_solver": "rhopimplefoam",
+    "expected_files": [
+      "controldict",
+      "fvsolution",
+      "fvschemes"
+    ],
+    "expected_key_checks": [
+      "pmin",
+      "tmin",
+      "adjusttimestep",
+      "maxco",
+      "bounded gauss"
+    ],
+    "expected_physics_tags": [
+      "sigfpe",
+      "fpe",
+      "floating point exception",
+      "divergence",
+      "compressible",
+      "courant",
+      "rhopimplefoam",
+      "negative pressure",
+      "stack trace",
+      "foam_sigfpe"
+    ],
+    "expected_primary_intent": "troubleshooting"
+  },
+  {
+    "case_id": "E2",
+    "category": "E",
+    "title": "interFoam alpha bounding and divergence",
+    "tool": "openfoam",
+    "query": "interFoam keeps reporting 'bounding alpha.water, min: -1e-3, max: 1.002'\nand the simulation crashes after 50 time steps. The mesh has max\nskewness 2.1. What MULES, alpha scheme, and mesh quality settings\nshould I change?",
+    "expected_solver": "interfoam",
+    "expected_files": [
+      "fvsolution",
+      "fvschemes",
+      "controldict"
+    ],
+    "expected_key_checks": [
+      "nalphacorr",
+      "nalphasubcycles",
+      "maxalphaco",
+      "calpha",
+      "vanleer"
+    ],
+    "expected_physics_tags": [
+      "interfoam",
+      "vof",
+      "alpha bounding",
+      "mules",
+      "skewness",
+      "courant",
+      "divergence",
+      "multiphase",
+      "phase fraction"
+    ],
+    "expected_primary_intent": "troubleshooting"
+  },
+  {
+    "case_id": "E3",
+    "category": "E",
+    "title": "simpleFoam k bounding and stagnation",
+    "tool": "openfoam",
+    "query": "My steady simpleFoam run with realizable k-epsilon shows 'bounding k'\nmessages on every iteration with increasing magnitude. Residuals\nplateau at 1e-2. The geometry has a stagnation region at the leading\nedge. What turbulence model and scheme changes should I make?",
+    "expected_solver": "simplefoam",
+    "expected_files": [
+      "fvsolution",
+      "fvschemes",
+      "turbulenceproperties"
+    ],
+    "expected_key_checks": [
+      "komegasst",
+      "bounded gauss",
+      "limitedlinear",
+      "relaxationfactors"
+    ],
+    "expected_physics_tags": [
+      "simplefoam",
+      "k epsilon",
+      "k omega sst",
+      "bounding",
+      "stagnation",
+      "turbulence",
+      "divergence",
+      "bounded schemes",
+      "under relaxation"
+    ],
+    "expected_primary_intent": "troubleshooting"
+  },
+  {
+    "case_id": "E4",
+    "category": "E",
+    "title": "checkMesh interpretation for PIMPLE",
+    "tool": "openfoam",
+    "query": "My checkMesh output shows max non-orthogonality 72 degrees, max skewness\n3.8, min determinant 0.005. I am running pimpleFoam transient incompressible.\nIs this mesh acceptable, and what fvSolution settings should I use?",
+    "expected_solver": "pimplefoam",
+    "expected_files": [
+      "fvsolution",
+      "meshqualitydict"
+    ],
+    "expected_key_checks": [
+      "nnonorthogonalcorrectors",
+      "ncorrectors",
+      "nouter"
+    ],
+    "expected_physics_tags": [
+      "checkmesh",
+      "non-orthogonality",
+      "skewness",
+      "determinant",
+      "mesh quality",
+      "pimplefoam",
+      "corrector loops",
+      "mesh diagnostics"
+    ],
+    "expected_primary_intent": "troubleshooting"
+  },
+  {
+    "case_id": "E5",
+    "category": "E",
+    "title": "snappyHexMesh layer coverage failure",
+    "tool": "openfoam",
+    "query": "snappyHexMesh layer addition reports only 35 percent coverage on my\ncar body STL. I requested 8 layers with expansionRatio 1.3 and\nfinalLayerThickness 0.5. Most layers are dropping to 0. How do I\ntune the addLayersControls to get above 85 percent coverage?",
+    "expected_solver": "snappyhexmesh",
+    "expected_files": [
+      "snappyhexmeshdict",
+      "meshqualitydict"
+    ],
+    "expected_key_checks": [
+      "expansionratio",
+      "finallayerthickness",
+      "nlayeriter",
+      "minthickness",
+      "featureangle",
+      "nsmooththickness"
+    ],
+    "expected_physics_tags": [
+      "snappyhexmesh",
+      "layer addition",
+      "layer coverage",
+      "boundary layer mesh",
+      "extrusion",
+      "expansionratio",
+      "finallayerthickness",
+      "meshing failure"
+    ],
+    "expected_primary_intent": "troubleshooting"
+  },
+  {
+    "case_id": "E6",
+    "category": "E",
+    "title": "y+ calculation and verification",
+    "tool": "openfoam",
+    "query": "I want to run kOmegaSST wall-resolved (y+ less than 1) on a flat plate\nof length 1 m at 10 m/s in air. How do I calculate the first cell\nheight, how many prism layers do I need with expansionRatio 1.2, and\nhow do I verify y+ after the run?",
+    "expected_solver": "simplefoam",
+    "expected_files": [
+      "snappyhexmeshdict",
+      "controldict"
+    ],
+    "expected_key_checks": [
+      "yplus",
+      "postprocess",
+      "komegasst",
+      "wall-resolved"
+    ],
+    "expected_physics_tags": [
+      "y plus",
+      "yplus",
+      "wall resolved",
+      "first cell height",
+      "boundary layer",
+      "k omega sst",
+      "prism layers",
+      "wall function",
+      "skin friction"
+    ],
+    "expected_primary_intent": "troubleshooting"
+  },
+  {
+    "case_id": "E7",
+    "category": "E",
+    "title": "totalPressure reverse flow divergence",
+    "tool": "openfoam",
+    "query": "My rhoSimpleFoam case with totalPressure inlet BC diverges when reverse\nflow develops at the inlet. The log shows huge negative static pressure\nbefore the FPE. What boundary condition should I use to handle this?",
+    "expected_solver": "rhosimplefoam",
+    "expected_files": [
+      "u",
+      "p",
+      "0"
+    ],
+    "expected_key_checks": [
+      "pressureinletoutletvelocity",
+      "totalpressure",
+      "inletoutlet"
+    ],
+    "expected_physics_tags": [
+      "boundary condition",
+      "totalpressure",
+      "reverse flow",
+      "divergence",
+      "compressible",
+      "rhosimplefoam",
+      "pressureinletoutletvelocity",
+      "fpe"
+    ],
+    "expected_primary_intent": "troubleshooting"
+  },
+  {
+    "case_id": "E8",
+    "category": "E",
+    "title": "Reading log for divergence early warning",
+    "tool": "openfoam",
+    "query": "How do I read an OpenFOAM solver log file to spot a divergence before\nthe simulation crashes? What residual patterns, bounding messages, and\nCourant number values are early warning signs, and what should I look\nfor in the linear solver output?",
+    "expected_solver": "any",
+    "expected_files": [
+      "log"
+    ],
+    "expected_key_checks": [
+      "bounding",
+      "courant",
+      "residual",
+      "gamg"
+    ],
+    "expected_physics_tags": [
+      "log file",
+      "residual",
+      "bounding",
+      "courant number",
+      "divergence",
+      "early warning",
+      "linear solver",
+      "convergence",
+      "troubleshooting"
+    ],
+    "expected_primary_intent": "troubleshooting"
+  }
+]

@@ -1,0 +1,40 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _6535e872-20250626 OPENFOAM=2506 version=2506
+Arch   : "LSB;label=32;scalar=64"
+Exec   : blockMesh
+Date   : Jul 05 2026
+Time   : 14:10:16
+Host   : levinson
+PID    : 47368
+I/O    : uncollated
+Case   : <repo>/benchmark/exec_fatal_probes/case_mesh_fix
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from "system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+
+
+--> FOAM FATAL IO ERROR: (openfoam-2506)
+Point label (6) out of range 0..5 in block hex (0 1 2 3 4 5 6 7) (20 20 1) grading (1(1) 1(1) 1(1))
+
+file: system/blockMeshDict/blocks at line 43.
+
+    From void Foam::blockDescriptor::check(const Foam::Istream&)
+    in file blockDescriptor/blockDescriptor.C at line 101.
+
+FOAM exiting
+

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Runtime output that a probe run may generate.
+# NOTE: the [0-9]*/ rule matches the 0/ and 0.orig/ INITIAL-CONDITION
+# directories as well as the generated time steps, so both are
+# explicitly re-included below. Without them the probes cannot be run.
+benchmark/exec_fatal_probes/*/postProcessing/
+benchmark/exec_fatal_probes/*/processor*/
+benchmark/exec_fatal_probes/*/[0-9]*/
+!benchmark/exec_fatal_probes/*/0/
+!benchmark/exec_fatal_probes/*/0.orig/
+benchmark/exec_fatal_probes/*/log.*
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store

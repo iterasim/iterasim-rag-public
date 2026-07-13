@@ -1,0 +1,43 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _6535e872-20250626 OPENFOAM=2506 version=2506
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam
+Date   : Jul 05 2026
+Time   : 14:08:52
+Host   : levinson
+PID    : 45224
+I/O    : uncollated
+Case   : <repo>/benchmark/exec_fatal_probes/case_dict_fix
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+
+
+--> FOAM FATAL IO ERROR: (openfoam-2506)
+Entry 'nu' not found in dictionary "<repo>/benchmark/exec_fatal_probes/case_dict_fix/constant/transportProperties"
+
+file: constant/transportProperties
+
+    From bool Foam::dimensioned<Type>::readEntry(const Foam::word&, const Foam::dictionary&, Foam::IOobjectOption::readOption, bool, Foam::keyType::option) [with Type = double]
+    in file /builddir/build/BUILD/openfoam2506-2506.1-build/OpenFOAM-v2506/src/OpenFOAM/lnInclude/dimensionedType.C at line 104.
+
+FOAM exiting
+

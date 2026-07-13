@@ -1,0 +1,42 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2506                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      meshQualityDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Broken probe: snappyHexMesh quality gates are set unreasonably strict
+// (maxNonOrtho 10, minTetQuality 0.5) so that during the snap phase
+// almost every candidate cell is rejected.  The resulting mesh has
+// large empty regions and non-conforming cells that checkMesh reports.
+// Fix: relax to canonical defaults (maxNonOrtho 65, minTetQuality 1e-9).
+maxNonOrtho          10;
+maxBoundarySkewness  4;
+maxInternalSkewness  1;
+maxConcave           30;
+minVol               1e-13;
+minTetQuality        0.5;
+minArea              -1;
+minTwist             0.05;
+minDeterminant       0.001;
+minFaceWeight        0.05;
+minVolRatio          0.01;
+minTriangleTwist     -1;
+nSmoothScale         4;
+errorReduction       0.75;
+
+relaxed
+{
+    maxNonOrtho     15;
+}
+
+// ************************************************************************* //

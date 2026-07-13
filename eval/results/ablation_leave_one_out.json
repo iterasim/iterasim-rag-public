@@ -1,0 +1,3105 @@
+{
+  "full": {
+    "overall": 75.58095238095238,
+    "by_tool": {
+      "openfoam": {
+        "n": 8,
+        "mean": 71.28571428571429
+      },
+      "meshing": {
+        "n": 5,
+        "mean": 93.6
+      },
+      "gmsh": {
+        "n": 3,
+        "mean": 81.33333333333334
+      },
+      "freecad": {
+        "n": 3,
+        "mean": 68.25396825396825
+      },
+      "pyfoam": {
+        "n": 3,
+        "mean": 67.55555555555556
+      },
+      "paraview": {
+        "n": 4,
+        "mean": 73.47619047619048
+      },
+      "cfd_theory": {
+        "n": 4,
+        "mean": 70.95238095238095
+      }
+    },
+    "records": [
+      {
+        "tags_hit": [
+          "GAMG",
+          "PCG",
+          "smoothSolver",
+          "residualControl",
+          "SIMPLE",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 1,
+        "tool": "openfoam",
+        "query": "Set up GAMG with PCG for p and smoothSolver for U, residualControl 1e-5 for SIMP",
+        "retrieval_seconds": 2.337,
+        "context_chars": 9344
+      },
+      {
+        "tags_hit": [
+          "rhoPimpleFoam",
+          "kOmegaSST",
+          "PIMPLE",
+          "compressible"
+        ],
+        "tags_missed": [
+          "thermophysicalProperties"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 2,
+        "tool": "openfoam",
+        "query": "Compressible high-speed flow over a wedge with k-omega SST and PIMPLE.",
+        "retrieval_seconds": 2.215,
+        "context_chars": 11855
+      },
+      {
+        "tags_hit": [
+          "icoFoam",
+          "cavity",
+          "laminar"
+        ],
+        "tags_missed": [
+          "movingWall",
+          "fixedValue"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 1.0,
+        "score_pct": 68.0,
+        "idx": 3,
+        "tool": "openfoam",
+        "query": "Lid-driven cavity at Re=100 with icoFoam, 20x20 cells.",
+        "retrieval_seconds": 2.298,
+        "context_chars": 10842
+      },
+      {
+        "tags_hit": [
+          "interFoam",
+          "alpha.water",
+          "g"
+        ],
+        "tags_missed": [
+          "MULES",
+          "cAlpha",
+          "interface"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 4,
+        "tool": "openfoam",
+        "query": "Multiphase dam break with interFoam, alpha.water = 1 in the column, gravity -9.8",
+        "retrieval_seconds": 2.181,
+        "context_chars": 9251
+      },
+      {
+        "tags_hit": [
+          "buoyantSimpleFoam",
+          "Boussinesq",
+          "beta",
+          "TRef",
+          "g",
+          "gh",
+          "p_rgh"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 5,
+        "tool": "openfoam",
+        "query": "Buoyant flow in a heated room with buoyantSimpleFoam and Boussinesq approximatio",
+        "retrieval_seconds": 2.309,
+        "context_chars": 10208
+      },
+      {
+        "tags_hit": [
+          "blockMesh",
+          "blockMeshDict",
+          "vertices",
+          "blocks",
+          "simpleGrading",
+          "edges",
+          "boundary"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 6,
+        "tool": "meshing",
+        "query": "Block-structured mesh for a backward-facing step, 100x60x1 cells, graded toward ",
+        "retrieval_seconds": 2.203,
+        "context_chars": 9819
+      },
+      {
+        "tags_hit": [
+          "snappyHexMeshDict",
+          "castellatedMeshControls",
+          "snapControls",
+          "addLayersControls",
+          "refinementSurfaces",
+          "nSurfaceLayers"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 7,
+        "tool": "meshing",
+        "query": "snappyHexMesh setup for a closed STL with refinement level 3 near walls and 5 la",
+        "retrieval_seconds": 2.096,
+        "context_chars": 15086
+      },
+      {
+        "tags_hit": [
+          "wedge",
+          "axisymmetric",
+          "symmetryPlane",
+          "empty"
+        ],
+        "tags_missed": [
+          "extrudeMesh"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 8,
+        "tool": "meshing",
+        "query": "Convert a 2D mesh to a wedge for axisymmetric flow with 2.5 degree opening angle",
+        "retrieval_seconds": 2.163,
+        "context_chars": 9448
+      },
+      {
+        "tags_hit": [
+          "decomposeParDict",
+          "scotch",
+          "numberOfSubdomains",
+          "reconstructPar",
+          "decomposePar"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 9,
+        "tool": "meshing",
+        "query": "Decompose case for 16 processors using scotch and reconstruct after solver finis",
+        "retrieval_seconds": 2.137,
+        "context_chars": 3458
+      },
+      {
+        "tags_hit": [
+          "Mesh.MshFileVersion",
+          "Physical Surface",
+          "gmshToFoam"
+        ],
+        "tags_missed": [
+          "Physical Volume",
+          "characteristic length",
+          "Mesh 3"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 10,
+        "tool": "gmsh",
+        "query": "Generate an unstructured 3D tetrahedral mesh for a cylinder with refinement near",
+        "retrieval_seconds": 2.118,
+        "context_chars": 12158
+      },
+      {
+        "tags_hit": [
+          "Physical Surface",
+          "gmshToFoam",
+          "patches",
+          "boundary"
+        ],
+        "tags_missed": [
+          "mergePatchPairs"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 11,
+        "tool": "gmsh",
+        "query": "Extract boundary patches as physical groups so OpenFOAM sees inlet, outlet, wall",
+        "retrieval_seconds": 2.849,
+        "context_chars": 10852
+      },
+      {
+        "tags_hit": [
+          "gmsh",
+          "python",
+          "BoundaryLayer",
+          "Field",
+          "addCurveLoop",
+          "synchronize"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 12,
+        "tool": "gmsh",
+        "query": "Use gmsh Python API to mesh a 2D airfoil with boundary layer cells.",
+        "retrieval_seconds": 2.179,
+        "context_chars": 12160
+      },
+      {
+        "tags_hit": [
+          "FreeCAD",
+          "Mesh",
+          "STL",
+          "watertight",
+          "Part",
+          "surfaceMesh"
+        ],
+        "tags_missed": [
+          "ExportSTL"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 13,
+        "tool": "freecad",
+        "query": "Export a watertight STL of a NACA-0012 airfoil from FreeCAD ready for snappyHexM",
+        "retrieval_seconds": 2.171,
+        "context_chars": 14587
+      },
+      {
+        "tags_hit": [
+          "STEP",
+          "Mesh"
+        ],
+        "tags_missed": [
+          "Part",
+          "defeature",
+          "Draft",
+          "BOPTools",
+          "Refine"
+        ],
+        "tag_coverage": 0.2857142857142857,
+        "solver_match": 1.0,
+        "score_pct": 42.85714285714286,
+        "idx": 14,
+        "tool": "freecad",
+        "query": "Defeature small fillets and holes on an imported STEP body before STL export.",
+        "retrieval_seconds": 2.454,
+        "context_chars": 6223
+      },
+      {
+        "tags_hit": [
+          "FreeCAD",
+          "Part",
+          "Sketcher",
+          "Fillet"
+        ],
+        "tags_missed": [
+          "Pad",
+          "parametric"
+        ],
+        "tag_coverage": 0.6666666666666666,
+        "solver_match": 1.0,
+        "score_pct": 73.33333333333334,
+        "idx": 15,
+        "tool": "freecad",
+        "query": "Generate the geometry of a square duct with rounded corners parametrically in Fr",
+        "retrieval_seconds": 2.351,
+        "context_chars": 8033
+      },
+      {
+        "tags_hit": [
+          "pyFoamPlotWatcher",
+          "ParsedParameterFile",
+          "residuals"
+        ],
+        "tags_missed": [
+          "pyFoamLogReplay",
+          "customRegexp"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 1.0,
+        "score_pct": 68.0,
+        "idx": 16,
+        "tool": "pyfoam",
+        "query": "Use PyFoam to monitor live residuals during a transient run and write them to CS",
+        "retrieval_seconds": 2.462,
+        "context_chars": 10543
+      },
+      {
+        "tags_hit": [
+          "ParsedParameterFile",
+          "deltaT",
+          "endTime",
+          "controlDict",
+          "writeFile"
+        ],
+        "tags_missed": [
+          "header"
+        ],
+        "tag_coverage": 0.8333333333333334,
+        "solver_match": 1.0,
+        "score_pct": 86.66666666666667,
+        "idx": 17,
+        "tool": "pyfoam",
+        "query": "Modify deltaT and endTime in controlDict from Python without breaking the FoamFi",
+        "retrieval_seconds": 2.059,
+        "context_chars": 5185
+      },
+      {
+        "tags_hit": [
+          "ParsedParameterFile",
+          "nu",
+          "cloneCase"
+        ],
+        "tags_missed": [
+          "pyFoamRunner",
+          "transportProperties"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 0.0,
+        "score_pct": 48.0,
+        "idx": 18,
+        "tool": "pyfoam",
+        "query": "Loop over a parameter sweep of viscosity values and run icoFoam each time via Py",
+        "retrieval_seconds": 2.155,
+        "context_chars": 13911
+      },
+      {
+        "tags_hit": [
+          "pvpython",
+          "SaveScreenshot",
+          "RenderView",
+          "Slice",
+          "UpdatePipeline",
+          "Show"
+        ],
+        "tags_missed": [
+          "ColorBar"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 19,
+        "tool": "paraview",
+        "query": "Headless render of U field on a mid-plane slice, save PNG at 1080p with a colour",
+        "retrieval_seconds": 2.297,
+        "context_chars": 10135
+      },
+      {
+        "tags_hit": [
+          "OpenFOAMReader",
+          "Calculator",
+          "vorticity",
+          "PlotOverLine"
+        ],
+        "tags_missed": [
+          "SaveData",
+          "CSVWriter"
+        ],
+        "tag_coverage": 0.6666666666666666,
+        "solver_match": 1.0,
+        "score_pct": 73.33333333333334,
+        "idx": 20,
+        "tool": "paraview",
+        "query": "Read OpenFOAM polyMesh, extract vorticity magnitude, save line probe along x at ",
+        "retrieval_seconds": 2.858,
+        "context_chars": 9316
+      },
+      {
+        "tags_hit": [
+          "Contour",
+          "AnimationScene",
+          "Iso"
+        ],
+        "tags_missed": [
+          "alpha.water",
+          "SaveAnimation"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 1.0,
+        "score_pct": 68.0,
+        "idx": 21,
+        "tool": "paraview",
+        "query": "Animate alpha.water iso-contour at value 0.5 over time and export an MP4.",
+        "retrieval_seconds": 2.163,
+        "context_chars": 8226
+      },
+      {
+        "tags_hit": [
+          "upwind",
+          "Gauss"
+        ],
+        "tags_missed": [
+          "limitedLinear",
+          "numerical diffusion",
+          "TVD",
+          "boundedness"
+        ],
+        "tag_coverage": 0.3333333333333333,
+        "solver_match": 1.0,
+        "score_pct": 46.666666666666664,
+        "idx": 22,
+        "tool": "cfd_theory",
+        "query": "Why does upwind divScheme damp diffusion, and when should I switch to limitedLin",
+        "retrieval_seconds": 2.611,
+        "context_chars": 5413
+      },
+      {
+        "tags_hit": [
+          "kOmegaSST",
+          "wallFunction",
+          "viscous sublayer"
+        ],
+        "tags_missed": [
+          "yPlus",
+          "kEpsilon",
+          "first cell height"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 23,
+        "tool": "cfd_theory",
+        "query": "y+ targets for k-omega SST near-wall vs k-epsilon with wall functions.",
+        "retrieval_seconds": 3.234,
+        "context_chars": 8159
+      },
+      {
+        "tags_hit": [
+          "PISO",
+          "SIMPLE",
+          "PIMPLE",
+          "transient",
+          "steady",
+          "nOuterCorrectors"
+        ],
+        "tags_missed": [
+          "Courant"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 24,
+        "tool": "cfd_theory",
+        "query": "When to use PISO vs SIMPLE vs PIMPLE: physical and numerical criteria.",
+        "retrieval_seconds": 2.17,
+        "context_chars": 5820
+      },
+      {
+        "tags_hit": [
+          "Courant",
+          "CFL",
+          "maxCo",
+          "adjustTimeStep",
+          "implicit",
+          "interFoam"
+        ],
+        "tags_missed": [
+          "explicit"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 25,
+        "tool": "cfd_theory",
+        "query": "Courant number stability bound for explicit and implicit time stepping in interF",
+        "retrieval_seconds": 2.175,
+        "context_chars": 7037
+      },
+      {
+        "tags_hit": [
+          "chtMultiRegionFoam",
+          "turbulentTemperatureCoupledBaffleMixed"
+        ],
+        "tags_missed": [
+          "regionProperties",
+          "constant/fluid",
+          "constant/solid"
+        ],
+        "tag_coverage": 0.4,
+        "solver_match": 1.0,
+        "score_pct": 52.0,
+        "idx": 26,
+        "tool": "openfoam",
+        "query": "Conjugate heat transfer between fluid and solid regions with chtMultiRegionFoam.",
+        "retrieval_seconds": 2.142,
+        "context_chars": 10530
+      },
+      {
+        "tags_hit": [
+          "wmake",
+          "Make/files"
+        ],
+        "tags_missed": [
+          "Make/options",
+          "libuserThermo",
+          "controlDict.libs"
+        ],
+        "tag_coverage": 0.4,
+        "solver_match": 1.0,
+        "score_pct": 52.0,
+        "idx": 27,
+        "tool": "openfoam",
+        "query": "Implement a custom thermophysical model by compiling a new library with wmake.",
+        "retrieval_seconds": 3.351,
+        "context_chars": 10248
+      },
+      {
+        "tags_hit": [
+          "interFoam",
+          "maxCo",
+          "adjustTimeStep"
+        ],
+        "tags_missed": [
+          "alpha.water",
+          "MULES",
+          "cAlpha",
+          "subCycles"
+        ],
+        "tag_coverage": 0.42857142857142855,
+        "solver_match": 1.0,
+        "score_pct": 54.28571428571429,
+        "idx": 28,
+        "tool": "openfoam",
+        "query": "Diverging interFoam VOF simulation: residuals oscillating, dam break case.",
+        "retrieval_seconds": 3.134,
+        "context_chars": 10623
+      },
+      {
+        "tags_hit": [
+          "checkMesh",
+          "non-orthogonality",
+          "skewness",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tags_missed": [
+          "aspectRatio"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 29,
+        "tool": "meshing",
+        "query": "Check mesh quality with checkMesh and fix high non-orthogonality.",
+        "retrieval_seconds": 2.041,
+        "context_chars": 7385
+      },
+      {
+        "tags_hit": [
+          "wallShearStress",
+          "yPlus",
+          "postProcess",
+          "ExtractBlock"
+        ],
+        "tags_missed": [
+          "functionObjects"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 0.0,
+        "score_pct": 64.00000000000001,
+        "idx": 30,
+        "tool": "paraview",
+        "query": "Compute wall shear stress and y+ on patch walls from a finished simpleFoam run.",
+        "retrieval_seconds": 1.989,
+        "context_chars": 10090
+      }
+    ]
+  },
+  "no_version_filter": {
+    "overall": 77.54285714285714,
+    "by_tool": {
+      "openfoam": {
+        "n": 8,
+        "mean": 72.71428571428572
+      },
+      "meshing": {
+        "n": 5,
+        "mean": 93.6
+      },
+      "gmsh": {
+        "n": 3,
+        "mean": 81.33333333333334
+      },
+      "freecad": {
+        "n": 3,
+        "mean": 72.06349206349206
+      },
+      "pyfoam": {
+        "n": 3,
+        "mean": 79.55555555555556
+      },
+      "paraview": {
+        "n": 4,
+        "mean": 73.47619047619048
+      },
+      "cfd_theory": {
+        "n": 4,
+        "mean": 70.95238095238095
+      }
+    },
+    "records": [
+      {
+        "tags_hit": [
+          "GAMG",
+          "PCG",
+          "smoothSolver",
+          "residualControl",
+          "SIMPLE",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 1,
+        "tool": "openfoam",
+        "query": "Set up GAMG with PCG for p and smoothSolver for U, residualControl 1e-5 for SIMP",
+        "retrieval_seconds": 2.074,
+        "context_chars": 9344
+      },
+      {
+        "tags_hit": [
+          "rhoPimpleFoam",
+          "kOmegaSST",
+          "PIMPLE",
+          "compressible"
+        ],
+        "tags_missed": [
+          "thermophysicalProperties"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 2,
+        "tool": "openfoam",
+        "query": "Compressible high-speed flow over a wedge with k-omega SST and PIMPLE.",
+        "retrieval_seconds": 2.433,
+        "context_chars": 8196
+      },
+      {
+        "tags_hit": [
+          "icoFoam",
+          "cavity",
+          "laminar"
+        ],
+        "tags_missed": [
+          "movingWall",
+          "fixedValue"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 1.0,
+        "score_pct": 68.0,
+        "idx": 3,
+        "tool": "openfoam",
+        "query": "Lid-driven cavity at Re=100 with icoFoam, 20x20 cells.",
+        "retrieval_seconds": 2.586,
+        "context_chars": 10842
+      },
+      {
+        "tags_hit": [
+          "interFoam",
+          "alpha.water",
+          "g"
+        ],
+        "tags_missed": [
+          "MULES",
+          "cAlpha",
+          "interface"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 4,
+        "tool": "openfoam",
+        "query": "Multiphase dam break with interFoam, alpha.water = 1 in the column, gravity -9.8",
+        "retrieval_seconds": 1.991,
+        "context_chars": 10856
+      },
+      {
+        "tags_hit": [
+          "buoyantSimpleFoam",
+          "Boussinesq",
+          "beta",
+          "TRef",
+          "g",
+          "gh",
+          "p_rgh"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 5,
+        "tool": "openfoam",
+        "query": "Buoyant flow in a heated room with buoyantSimpleFoam and Boussinesq approximatio",
+        "retrieval_seconds": 2.044,
+        "context_chars": 10208
+      },
+      {
+        "tags_hit": [
+          "blockMesh",
+          "blockMeshDict",
+          "vertices",
+          "blocks",
+          "simpleGrading",
+          "edges",
+          "boundary"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 6,
+        "tool": "meshing",
+        "query": "Block-structured mesh for a backward-facing step, 100x60x1 cells, graded toward ",
+        "retrieval_seconds": 2.07,
+        "context_chars": 9819
+      },
+      {
+        "tags_hit": [
+          "snappyHexMeshDict",
+          "castellatedMeshControls",
+          "snapControls",
+          "addLayersControls",
+          "refinementSurfaces",
+          "nSurfaceLayers"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 7,
+        "tool": "meshing",
+        "query": "snappyHexMesh setup for a closed STL with refinement level 3 near walls and 5 la",
+        "retrieval_seconds": 2.839,
+        "context_chars": 12002
+      },
+      {
+        "tags_hit": [
+          "wedge",
+          "axisymmetric",
+          "symmetryPlane",
+          "empty"
+        ],
+        "tags_missed": [
+          "extrudeMesh"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 8,
+        "tool": "meshing",
+        "query": "Convert a 2D mesh to a wedge for axisymmetric flow with 2.5 degree opening angle",
+        "retrieval_seconds": 2.078,
+        "context_chars": 8676
+      },
+      {
+        "tags_hit": [
+          "decomposeParDict",
+          "scotch",
+          "numberOfSubdomains",
+          "reconstructPar",
+          "decomposePar"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 9,
+        "tool": "meshing",
+        "query": "Decompose case for 16 processors using scotch and reconstruct after solver finis",
+        "retrieval_seconds": 2.032,
+        "context_chars": 1879
+      },
+      {
+        "tags_hit": [
+          "Mesh.MshFileVersion",
+          "Physical Surface",
+          "gmshToFoam"
+        ],
+        "tags_missed": [
+          "Physical Volume",
+          "characteristic length",
+          "Mesh 3"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 10,
+        "tool": "gmsh",
+        "query": "Generate an unstructured 3D tetrahedral mesh for a cylinder with refinement near",
+        "retrieval_seconds": 2.248,
+        "context_chars": 12872
+      },
+      {
+        "tags_hit": [
+          "Physical Surface",
+          "gmshToFoam",
+          "patches",
+          "boundary"
+        ],
+        "tags_missed": [
+          "mergePatchPairs"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 11,
+        "tool": "gmsh",
+        "query": "Extract boundary patches as physical groups so OpenFOAM sees inlet, outlet, wall",
+        "retrieval_seconds": 2.442,
+        "context_chars": 9824
+      },
+      {
+        "tags_hit": [
+          "gmsh",
+          "python",
+          "BoundaryLayer",
+          "Field",
+          "addCurveLoop",
+          "synchronize"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 12,
+        "tool": "gmsh",
+        "query": "Use gmsh Python API to mesh a 2D airfoil with boundary layer cells.",
+        "retrieval_seconds": 2.148,
+        "context_chars": 12160
+      },
+      {
+        "tags_hit": [
+          "FreeCAD",
+          "Mesh",
+          "STL",
+          "watertight",
+          "Part",
+          "surfaceMesh"
+        ],
+        "tags_missed": [
+          "ExportSTL"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 13,
+        "tool": "freecad",
+        "query": "Export a watertight STL of a NACA-0012 airfoil from FreeCAD ready for snappyHexM",
+        "retrieval_seconds": 2.752,
+        "context_chars": 14845
+      },
+      {
+        "tags_hit": [
+          "STEP",
+          "Mesh",
+          "Refine"
+        ],
+        "tags_missed": [
+          "Part",
+          "defeature",
+          "Draft",
+          "BOPTools"
+        ],
+        "tag_coverage": 0.42857142857142855,
+        "solver_match": 1.0,
+        "score_pct": 54.28571428571429,
+        "idx": 14,
+        "tool": "freecad",
+        "query": "Defeature small fillets and holes on an imported STEP body before STL export.",
+        "retrieval_seconds": 2.46,
+        "context_chars": 5605
+      },
+      {
+        "tags_hit": [
+          "FreeCAD",
+          "Part",
+          "Fillet",
+          "parametric"
+        ],
+        "tags_missed": [
+          "Sketcher",
+          "Pad"
+        ],
+        "tag_coverage": 0.6666666666666666,
+        "solver_match": 1.0,
+        "score_pct": 73.33333333333334,
+        "idx": 15,
+        "tool": "freecad",
+        "query": "Generate the geometry of a square duct with rounded corners parametrically in Fr",
+        "retrieval_seconds": 2.716,
+        "context_chars": 9972
+      },
+      {
+        "tags_hit": [
+          "pyFoamPlotWatcher",
+          "ParsedParameterFile",
+          "residuals"
+        ],
+        "tags_missed": [
+          "pyFoamLogReplay",
+          "customRegexp"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 1.0,
+        "score_pct": 68.0,
+        "idx": 16,
+        "tool": "pyfoam",
+        "query": "Use PyFoam to monitor live residuals during a transient run and write them to CS",
+        "retrieval_seconds": 2.223,
+        "context_chars": 10543
+      },
+      {
+        "tags_hit": [
+          "ParsedParameterFile",
+          "deltaT",
+          "endTime",
+          "controlDict",
+          "writeFile"
+        ],
+        "tags_missed": [
+          "header"
+        ],
+        "tag_coverage": 0.8333333333333334,
+        "solver_match": 1.0,
+        "score_pct": 86.66666666666667,
+        "idx": 17,
+        "tool": "pyfoam",
+        "query": "Modify deltaT and endTime in controlDict from Python without breaking the FoamFi",
+        "retrieval_seconds": 2.791,
+        "context_chars": 11578
+      },
+      {
+        "tags_hit": [
+          "ParsedParameterFile",
+          "transportProperties",
+          "nu",
+          "cloneCase"
+        ],
+        "tags_missed": [
+          "pyFoamRunner"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 18,
+        "tool": "pyfoam",
+        "query": "Loop over a parameter sweep of viscosity values and run icoFoam each time via Py",
+        "retrieval_seconds": 2.473,
+        "context_chars": 11356
+      },
+      {
+        "tags_hit": [
+          "pvpython",
+          "SaveScreenshot",
+          "RenderView",
+          "Slice",
+          "UpdatePipeline",
+          "Show"
+        ],
+        "tags_missed": [
+          "ColorBar"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 19,
+        "tool": "paraview",
+        "query": "Headless render of U field on a mid-plane slice, save PNG at 1080p with a colour",
+        "retrieval_seconds": 2.992,
+        "context_chars": 10135
+      },
+      {
+        "tags_hit": [
+          "OpenFOAMReader",
+          "Calculator",
+          "vorticity",
+          "PlotOverLine"
+        ],
+        "tags_missed": [
+          "SaveData",
+          "CSVWriter"
+        ],
+        "tag_coverage": 0.6666666666666666,
+        "solver_match": 1.0,
+        "score_pct": 73.33333333333334,
+        "idx": 20,
+        "tool": "paraview",
+        "query": "Read OpenFOAM polyMesh, extract vorticity magnitude, save line probe along x at ",
+        "retrieval_seconds": 2.158,
+        "context_chars": 8972
+      },
+      {
+        "tags_hit": [
+          "Contour",
+          "AnimationScene",
+          "Iso"
+        ],
+        "tags_missed": [
+          "alpha.water",
+          "SaveAnimation"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 1.0,
+        "score_pct": 68.0,
+        "idx": 21,
+        "tool": "paraview",
+        "query": "Animate alpha.water iso-contour at value 0.5 over time and export an MP4.",
+        "retrieval_seconds": 2.125,
+        "context_chars": 8226
+      },
+      {
+        "tags_hit": [
+          "upwind",
+          "Gauss"
+        ],
+        "tags_missed": [
+          "limitedLinear",
+          "numerical diffusion",
+          "TVD",
+          "boundedness"
+        ],
+        "tag_coverage": 0.3333333333333333,
+        "solver_match": 1.0,
+        "score_pct": 46.666666666666664,
+        "idx": 22,
+        "tool": "cfd_theory",
+        "query": "Why does upwind divScheme damp diffusion, and when should I switch to limitedLin",
+        "retrieval_seconds": 3.003,
+        "context_chars": 5228
+      },
+      {
+        "tags_hit": [
+          "kOmegaSST",
+          "wallFunction",
+          "viscous sublayer"
+        ],
+        "tags_missed": [
+          "yPlus",
+          "kEpsilon",
+          "first cell height"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 23,
+        "tool": "cfd_theory",
+        "query": "y+ targets for k-omega SST near-wall vs k-epsilon with wall functions.",
+        "retrieval_seconds": 2.009,
+        "context_chars": 8159
+      },
+      {
+        "tags_hit": [
+          "PISO",
+          "SIMPLE",
+          "PIMPLE",
+          "transient",
+          "steady",
+          "nOuterCorrectors"
+        ],
+        "tags_missed": [
+          "Courant"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 24,
+        "tool": "cfd_theory",
+        "query": "When to use PISO vs SIMPLE vs PIMPLE: physical and numerical criteria.",
+        "retrieval_seconds": 2.099,
+        "context_chars": 7250
+      },
+      {
+        "tags_hit": [
+          "Courant",
+          "CFL",
+          "maxCo",
+          "adjustTimeStep",
+          "implicit",
+          "interFoam"
+        ],
+        "tags_missed": [
+          "explicit"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 25,
+        "tool": "cfd_theory",
+        "query": "Courant number stability bound for explicit and implicit time stepping in interF",
+        "retrieval_seconds": 2.282,
+        "context_chars": 7037
+      },
+      {
+        "tags_hit": [
+          "chtMultiRegionFoam",
+          "turbulentTemperatureCoupledBaffleMixed"
+        ],
+        "tags_missed": [
+          "regionProperties",
+          "constant/fluid",
+          "constant/solid"
+        ],
+        "tag_coverage": 0.4,
+        "solver_match": 1.0,
+        "score_pct": 52.0,
+        "idx": 26,
+        "tool": "openfoam",
+        "query": "Conjugate heat transfer between fluid and solid regions with chtMultiRegionFoam.",
+        "retrieval_seconds": 1.966,
+        "context_chars": 10530
+      },
+      {
+        "tags_hit": [
+          "wmake",
+          "Make/files"
+        ],
+        "tags_missed": [
+          "Make/options",
+          "libuserThermo",
+          "controlDict.libs"
+        ],
+        "tag_coverage": 0.4,
+        "solver_match": 1.0,
+        "score_pct": 52.0,
+        "idx": 27,
+        "tool": "openfoam",
+        "query": "Implement a custom thermophysical model by compiling a new library with wmake.",
+        "retrieval_seconds": 2.749,
+        "context_chars": 10248
+      },
+      {
+        "tags_hit": [
+          "interFoam",
+          "alpha.water",
+          "maxCo",
+          "adjustTimeStep"
+        ],
+        "tags_missed": [
+          "MULES",
+          "cAlpha",
+          "subCycles"
+        ],
+        "tag_coverage": 0.5714285714285714,
+        "solver_match": 1.0,
+        "score_pct": 65.71428571428571,
+        "idx": 28,
+        "tool": "openfoam",
+        "query": "Diverging interFoam VOF simulation: residuals oscillating, dam break case.",
+        "retrieval_seconds": 2.029,
+        "context_chars": 10170
+      },
+      {
+        "tags_hit": [
+          "checkMesh",
+          "non-orthogonality",
+          "skewness",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tags_missed": [
+          "aspectRatio"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 29,
+        "tool": "meshing",
+        "query": "Check mesh quality with checkMesh and fix high non-orthogonality.",
+        "retrieval_seconds": 2.126,
+        "context_chars": 5984
+      },
+      {
+        "tags_hit": [
+          "wallShearStress",
+          "yPlus",
+          "postProcess",
+          "ExtractBlock"
+        ],
+        "tags_missed": [
+          "functionObjects"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 0.0,
+        "score_pct": 64.00000000000001,
+        "idx": 30,
+        "tool": "paraview",
+        "query": "Compute wall shear stress and y+ on patch walls from a finished simpleFoam run.",
+        "retrieval_seconds": 2.582,
+        "context_chars": 10090
+      }
+    ]
+  },
+  "no_mmr": {
+    "overall": 64.98412698412699,
+    "by_tool": {
+      "openfoam": {
+        "n": 8,
+        "mean": 55.42857142857143
+      },
+      "meshing": {
+        "n": 5,
+        "mean": 80.8
+      },
+      "gmsh": {
+        "n": 3,
+        "mean": 81.33333333333334
+      },
+      "freecad": {
+        "n": 3,
+        "mean": 71.42857142857143
+      },
+      "pyfoam": {
+        "n": 3,
+        "mean": 67.55555555555556
+      },
+      "paraview": {
+        "n": 4,
+        "mean": 61.47619047619048
+      },
+      "cfd_theory": {
+        "n": 4,
+        "mean": 48.80952380952381
+      }
+    },
+    "records": [
+      {
+        "tags_hit": [
+          "GAMG",
+          "PCG",
+          "smoothSolver",
+          "residualControl",
+          "SIMPLE",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 1,
+        "tool": "openfoam",
+        "query": "Set up GAMG with PCG for p and smoothSolver for U, residualControl 1e-5 for SIMP",
+        "retrieval_seconds": 2.142,
+        "context_chars": 9919
+      },
+      {
+        "tags_hit": [
+          "rhoPimpleFoam",
+          "kOmegaSST",
+          "PIMPLE",
+          "compressible"
+        ],
+        "tags_missed": [
+          "thermophysicalProperties"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 2,
+        "tool": "openfoam",
+        "query": "Compressible high-speed flow over a wedge with k-omega SST and PIMPLE.",
+        "retrieval_seconds": 2.17,
+        "context_chars": 11855
+      },
+      {
+        "tags_hit": [
+          "icoFoam",
+          "cavity",
+          "laminar"
+        ],
+        "tags_missed": [
+          "movingWall",
+          "fixedValue"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 1.0,
+        "score_pct": 68.0,
+        "idx": 3,
+        "tool": "openfoam",
+        "query": "Lid-driven cavity at Re=100 with icoFoam, 20x20 cells.",
+        "retrieval_seconds": 1.975,
+        "context_chars": 10842
+      },
+      {
+        "tags_hit": [
+          "interFoam",
+          "alpha.water",
+          "g"
+        ],
+        "tags_missed": [
+          "MULES",
+          "cAlpha",
+          "interface"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 4,
+        "tool": "openfoam",
+        "query": "Multiphase dam break with interFoam, alpha.water = 1 in the column, gravity -9.8",
+        "retrieval_seconds": 2.225,
+        "context_chars": 10851
+      },
+      {
+        "tags_hit": [
+          "buoyantSimpleFoam",
+          "Boussinesq",
+          "beta",
+          "TRef",
+          "g",
+          "gh",
+          "p_rgh"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 5,
+        "tool": "openfoam",
+        "query": "Buoyant flow in a heated room with buoyantSimpleFoam and Boussinesq approximatio",
+        "retrieval_seconds": 2.376,
+        "context_chars": 10208
+      },
+      {
+        "tags_hit": [
+          "blockMesh",
+          "blockMeshDict",
+          "vertices",
+          "blocks",
+          "simpleGrading",
+          "edges",
+          "boundary"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 6,
+        "tool": "meshing",
+        "query": "Block-structured mesh for a backward-facing step, 100x60x1 cells, graded toward ",
+        "retrieval_seconds": 2.698,
+        "context_chars": 9819
+      },
+      {
+        "tags_hit": [
+          "snappyHexMeshDict",
+          "castellatedMeshControls",
+          "snapControls",
+          "addLayersControls",
+          "refinementSurfaces",
+          "nSurfaceLayers"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 7,
+        "tool": "meshing",
+        "query": "snappyHexMesh setup for a closed STL with refinement level 3 near walls and 5 la",
+        "retrieval_seconds": 2.031,
+        "context_chars": 12002
+      },
+      {
+        "tags_hit": [
+          "wedge",
+          "axisymmetric",
+          "symmetryPlane",
+          "empty"
+        ],
+        "tags_missed": [
+          "extrudeMesh"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 8,
+        "tool": "meshing",
+        "query": "Convert a 2D mesh to a wedge for axisymmetric flow with 2.5 degree opening angle",
+        "retrieval_seconds": 2.674,
+        "context_chars": 8676
+      },
+      {
+        "tags_hit": [
+          "decomposeParDict",
+          "scotch",
+          "numberOfSubdomains",
+          "reconstructPar",
+          "decomposePar"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 9,
+        "tool": "meshing",
+        "query": "Decompose case for 16 processors using scotch and reconstruct after solver finis",
+        "retrieval_seconds": 2.364,
+        "context_chars": 1902
+      },
+      {
+        "tags_hit": [
+          "Mesh.MshFileVersion",
+          "Physical Surface",
+          "gmshToFoam"
+        ],
+        "tags_missed": [
+          "Physical Volume",
+          "characteristic length",
+          "Mesh 3"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 10,
+        "tool": "gmsh",
+        "query": "Generate an unstructured 3D tetrahedral mesh for a cylinder with refinement near",
+        "retrieval_seconds": 2.221,
+        "context_chars": 12881
+      },
+      {
+        "tags_hit": [
+          "Physical Surface",
+          "gmshToFoam",
+          "patches",
+          "boundary"
+        ],
+        "tags_missed": [
+          "mergePatchPairs"
+        ],
+        "tag_coverage": 0.8,
+        "solver_match": 1.0,
+        "score_pct": 84.00000000000001,
+        "idx": 11,
+        "tool": "gmsh",
+        "query": "Extract boundary patches as physical groups so OpenFOAM sees inlet, outlet, wall",
+        "retrieval_seconds": 2.332,
+        "context_chars": 9824
+      },
+      {
+        "tags_hit": [
+          "gmsh",
+          "python",
+          "BoundaryLayer",
+          "Field",
+          "addCurveLoop",
+          "synchronize"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 12,
+        "tool": "gmsh",
+        "query": "Use gmsh Python API to mesh a 2D airfoil with boundary layer cells.",
+        "retrieval_seconds": 2.812,
+        "context_chars": 12160
+      },
+      {
+        "tags_hit": [
+          "FreeCAD",
+          "Mesh",
+          "STL",
+          "watertight",
+          "Part",
+          "surfaceMesh"
+        ],
+        "tags_missed": [
+          "ExportSTL"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 13,
+        "tool": "freecad",
+        "query": "Export a watertight STL of a NACA-0012 airfoil from FreeCAD ready for snappyHexM",
+        "retrieval_seconds": 2.606,
+        "context_chars": 13536
+      },
+      {
+        "tags_hit": [
+          "STEP",
+          "Part",
+          "Mesh",
+          "Refine"
+        ],
+        "tags_missed": [
+          "defeature",
+          "Draft",
+          "BOPTools"
+        ],
+        "tag_coverage": 0.5714285714285714,
+        "solver_match": 1.0,
+        "score_pct": 65.71428571428571,
+        "idx": 14,
+        "tool": "freecad",
+        "query": "Defeature small fillets and holes on an imported STEP body before STL export.",
+        "retrieval_seconds": 2.23,
+        "context_chars": 5425
+      },
+      {
+        "tags_hit": [
+          "FreeCAD",
+          "Part",
+          "Fillet"
+        ],
+        "tags_missed": [
+          "Sketcher",
+          "Pad",
+          "parametric"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 15,
+        "tool": "freecad",
+        "query": "Generate the geometry of a square duct with rounded corners parametrically in Fr",
+        "retrieval_seconds": 2.162,
+        "context_chars": 8451
+      },
+      {
+        "tags_hit": [
+          "pyFoamPlotWatcher",
+          "ParsedParameterFile",
+          "residuals"
+        ],
+        "tags_missed": [
+          "pyFoamLogReplay",
+          "customRegexp"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 1.0,
+        "score_pct": 68.0,
+        "idx": 16,
+        "tool": "pyfoam",
+        "query": "Use PyFoam to monitor live residuals during a transient run and write them to CS",
+        "retrieval_seconds": 2.461,
+        "context_chars": 10543
+      },
+      {
+        "tags_hit": [
+          "ParsedParameterFile",
+          "deltaT",
+          "endTime",
+          "controlDict",
+          "writeFile"
+        ],
+        "tags_missed": [
+          "header"
+        ],
+        "tag_coverage": 0.8333333333333334,
+        "solver_match": 1.0,
+        "score_pct": 86.66666666666667,
+        "idx": 17,
+        "tool": "pyfoam",
+        "query": "Modify deltaT and endTime in controlDict from Python without breaking the FoamFi",
+        "retrieval_seconds": 2.074,
+        "context_chars": 9885
+      },
+      {
+        "tags_hit": [
+          "ParsedParameterFile",
+          "nu",
+          "cloneCase"
+        ],
+        "tags_missed": [
+          "pyFoamRunner",
+          "transportProperties"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 0.0,
+        "score_pct": 48.0,
+        "idx": 18,
+        "tool": "pyfoam",
+        "query": "Loop over a parameter sweep of viscosity values and run icoFoam each time via Py",
+        "retrieval_seconds": 2.727,
+        "context_chars": 13911
+      },
+      {
+        "tags_hit": [
+          "pvpython",
+          "SaveScreenshot",
+          "RenderView",
+          "Slice",
+          "UpdatePipeline",
+          "Show"
+        ],
+        "tags_missed": [
+          "ColorBar"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 19,
+        "tool": "paraview",
+        "query": "Headless render of U field on a mid-plane slice, save PNG at 1080p with a colour",
+        "retrieval_seconds": 1.985,
+        "context_chars": 10135
+      },
+      {
+        "tags_hit": [
+          "OpenFOAMReader",
+          "Calculator",
+          "vorticity",
+          "PlotOverLine"
+        ],
+        "tags_missed": [
+          "SaveData",
+          "CSVWriter"
+        ],
+        "tag_coverage": 0.6666666666666666,
+        "solver_match": 1.0,
+        "score_pct": 73.33333333333334,
+        "idx": 20,
+        "tool": "paraview",
+        "query": "Read OpenFOAM polyMesh, extract vorticity magnitude, save line probe along x at ",
+        "retrieval_seconds": 2.052,
+        "context_chars": 8315
+      },
+      {
+        "tags_hit": [
+          "Contour",
+          "AnimationScene",
+          "Iso"
+        ],
+        "tags_missed": [
+          "alpha.water",
+          "SaveAnimation"
+        ],
+        "tag_coverage": 0.6,
+        "solver_match": 1.0,
+        "score_pct": 68.0,
+        "idx": 21,
+        "tool": "paraview",
+        "query": "Animate alpha.water iso-contour at value 0.5 over time and export an MP4.",
+        "retrieval_seconds": 2.1,
+        "context_chars": 8226
+      },
+      {
+        "tags_hit": [
+          "upwind",
+          "Gauss"
+        ],
+        "tags_missed": [
+          "limitedLinear",
+          "numerical diffusion",
+          "TVD",
+          "boundedness"
+        ],
+        "tag_coverage": 0.3333333333333333,
+        "solver_match": 1.0,
+        "score_pct": 46.666666666666664,
+        "idx": 22,
+        "tool": "cfd_theory",
+        "query": "Why does upwind divScheme damp diffusion, and when should I switch to limitedLin",
+        "retrieval_seconds": 2.796,
+        "context_chars": 5419
+      },
+      {
+        "tags_hit": [
+          "kOmegaSST",
+          "wallFunction",
+          "viscous sublayer"
+        ],
+        "tags_missed": [
+          "yPlus",
+          "kEpsilon",
+          "first cell height"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 23,
+        "tool": "cfd_theory",
+        "query": "y+ targets for k-omega SST near-wall vs k-epsilon with wall functions.",
+        "retrieval_seconds": 2.353,
+        "context_chars": 8159
+      },
+      {
+        "tags_hit": [
+          "PISO",
+          "SIMPLE",
+          "PIMPLE",
+          "transient",
+          "steady",
+          "nOuterCorrectors"
+        ],
+        "tags_missed": [
+          "Courant"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 24,
+        "tool": "cfd_theory",
+        "query": "When to use PISO vs SIMPLE vs PIMPLE: physical and numerical criteria.",
+        "retrieval_seconds": 2.032,
+        "context_chars": 7250
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "Courant",
+          "CFL",
+          "maxCo",
+          "adjustTimeStep",
+          "explicit",
+          "implicit",
+          "interFoam"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 25,
+        "tool": "cfd_theory",
+        "query": "Courant number stability bound for explicit and implicit time stepping in interF",
+        "retrieval_seconds": 1.546,
+        "context_chars": 7444
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "chtMultiRegionFoam",
+          "regionProperties",
+          "constant/fluid",
+          "constant/solid",
+          "turbulentTemperatureCoupledBaffleMixed"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 26,
+        "tool": "openfoam",
+        "query": "Conjugate heat transfer between fluid and solid regions with chtMultiRegionFoam.",
+        "retrieval_seconds": 1.195,
+        "context_chars": 9600
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "wmake",
+          "Make/files",
+          "Make/options",
+          "libuserThermo",
+          "controlDict.libs"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 27,
+        "tool": "openfoam",
+        "query": "Implement a custom thermophysical model by compiling a new library with wmake.",
+        "retrieval_seconds": 1.316,
+        "context_chars": 7092
+      },
+      {
+        "tags_hit": [
+          "adjustTimeStep"
+        ],
+        "tags_missed": [
+          "interFoam",
+          "alpha.water",
+          "MULES",
+          "cAlpha",
+          "maxCo",
+          "subCycles"
+        ],
+        "tag_coverage": 0.14285714285714285,
+        "solver_match": 0.0,
+        "score_pct": 11.428571428571429,
+        "idx": 28,
+        "tool": "openfoam",
+        "query": "Diverging interFoam VOF simulation: residuals oscillating, dam break case.",
+        "retrieval_seconds": 1.305,
+        "context_chars": 6396
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "checkMesh",
+          "non-orthogonality",
+          "skewness",
+          "aspectRatio",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 29,
+        "tool": "meshing",
+        "query": "Check mesh quality with checkMesh and fix high non-orthogonality.",
+        "retrieval_seconds": 1.231,
+        "context_chars": 6187
+      },
+      {
+        "tags_hit": [
+          "postProcess"
+        ],
+        "tags_missed": [
+          "wallShearStress",
+          "yPlus",
+          "functionObjects",
+          "ExtractBlock"
+        ],
+        "tag_coverage": 0.2,
+        "solver_match": 0.0,
+        "score_pct": 16.000000000000004,
+        "idx": 30,
+        "tool": "paraview",
+        "query": "Compute wall shear stress and y+ on patch walls from a finished simpleFoam run.",
+        "retrieval_seconds": 1.286,
+        "context_chars": 8487
+      }
+    ]
+  },
+  "no_multi_query": {
+    "overall": 25.87936507936508,
+    "by_tool": {
+      "openfoam": {
+        "n": 8,
+        "mean": 13.547619047619047
+      },
+      "meshing": {
+        "n": 5,
+        "mean": 36.91428571428572
+      },
+      "gmsh": {
+        "n": 3,
+        "mean": 33.333333333333336
+      },
+      "freecad": {
+        "n": 3,
+        "mean": 47.936507936507944
+      },
+      "pyfoam": {
+        "n": 3,
+        "mean": 24.000000000000004
+      },
+      "paraview": {
+        "n": 4,
+        "mean": 20.714285714285715
+      },
+      "cfd_theory": {
+        "n": 4,
+        "mean": 21.19047619047619
+      }
+    },
+    "records": [
+      {
+        "tags_hit": [
+          "SIMPLE"
+        ],
+        "tags_missed": [
+          "GAMG",
+          "PCG",
+          "smoothSolver",
+          "residualControl",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tag_coverage": 0.16666666666666666,
+        "solver_match": 0.0,
+        "score_pct": 13.333333333333334,
+        "idx": 1,
+        "tool": "openfoam",
+        "query": "Set up GAMG with PCG for p and smoothSolver for U, residualControl 1e-5 for SIMP",
+        "retrieval_seconds": 0.102,
+        "context_chars": 8059
+      },
+      {
+        "tags_hit": [
+          "PIMPLE"
+        ],
+        "tags_missed": [
+          "rhoPimpleFoam",
+          "kOmegaSST",
+          "compressible",
+          "thermophysicalProperties"
+        ],
+        "tag_coverage": 0.2,
+        "solver_match": 0.0,
+        "score_pct": 16.000000000000004,
+        "idx": 2,
+        "tool": "openfoam",
+        "query": "Compressible high-speed flow over a wedge with k-omega SST and PIMPLE.",
+        "retrieval_seconds": 0.054,
+        "context_chars": 8975
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "icoFoam",
+          "cavity",
+          "movingWall",
+          "fixedValue",
+          "laminar"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 3,
+        "tool": "openfoam",
+        "query": "Lid-driven cavity at Re=100 with icoFoam, 20x20 cells.",
+        "retrieval_seconds": 0.072,
+        "context_chars": 9620
+      },
+      {
+        "tags_hit": [
+          "g"
+        ],
+        "tags_missed": [
+          "interFoam",
+          "alpha.water",
+          "MULES",
+          "cAlpha",
+          "interface"
+        ],
+        "tag_coverage": 0.16666666666666666,
+        "solver_match": 0.0,
+        "score_pct": 13.333333333333334,
+        "idx": 4,
+        "tool": "openfoam",
+        "query": "Multiphase dam break with interFoam, alpha.water = 1 in the column, gravity -9.8",
+        "retrieval_seconds": 0.051,
+        "context_chars": 7964
+      },
+      {
+        "tags_hit": [
+          "g",
+          "gh",
+          "p_rgh"
+        ],
+        "tags_missed": [
+          "buoyantSimpleFoam",
+          "Boussinesq",
+          "beta",
+          "TRef"
+        ],
+        "tag_coverage": 0.42857142857142855,
+        "solver_match": 0.0,
+        "score_pct": 34.285714285714285,
+        "idx": 5,
+        "tool": "openfoam",
+        "query": "Buoyant flow in a heated room with buoyantSimpleFoam and Boussinesq approximatio",
+        "retrieval_seconds": 0.067,
+        "context_chars": 6711
+      },
+      {
+        "tags_hit": [
+          "blockMesh",
+          "blockMeshDict",
+          "blocks",
+          "simpleGrading",
+          "edges",
+          "boundary"
+        ],
+        "tags_missed": [
+          "vertices"
+        ],
+        "tag_coverage": 0.8571428571428571,
+        "solver_match": 1.0,
+        "score_pct": 88.57142857142857,
+        "idx": 6,
+        "tool": "meshing",
+        "query": "Block-structured mesh for a backward-facing step, 100x60x1 cells, graded toward ",
+        "retrieval_seconds": 0.052,
+        "context_chars": 5447
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "snappyHexMeshDict",
+          "castellatedMeshControls",
+          "snapControls",
+          "addLayersControls",
+          "refinementSurfaces",
+          "nSurfaceLayers"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 7,
+        "tool": "meshing",
+        "query": "snappyHexMesh setup for a closed STL with refinement level 3 near walls and 5 la",
+        "retrieval_seconds": 0.105,
+        "context_chars": 481
+      },
+      {
+        "tags_hit": [
+          "empty"
+        ],
+        "tags_missed": [
+          "wedge",
+          "axisymmetric",
+          "symmetryPlane",
+          "extrudeMesh"
+        ],
+        "tag_coverage": 0.2,
+        "solver_match": 1.0,
+        "score_pct": 36.00000000000001,
+        "idx": 8,
+        "tool": "meshing",
+        "query": "Convert a 2D mesh to a wedge for axisymmetric flow with 2.5 degree opening angle",
+        "retrieval_seconds": 0.067,
+        "context_chars": 6826
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "decomposeParDict",
+          "scotch",
+          "numberOfSubdomains",
+          "reconstructPar",
+          "decomposePar"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 9,
+        "tool": "meshing",
+        "query": "Decompose case for 16 processors using scotch and reconstruct after solver finis",
+        "retrieval_seconds": 0.081,
+        "context_chars": 3972
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "Mesh.MshFileVersion",
+          "Physical Surface",
+          "Physical Volume",
+          "gmshToFoam",
+          "characteristic length",
+          "Mesh 3"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 10,
+        "tool": "gmsh",
+        "query": "Generate an unstructured 3D tetrahedral mesh for a cylinder with refinement near",
+        "retrieval_seconds": 0.062,
+        "context_chars": 8937
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "Physical Surface",
+          "gmshToFoam",
+          "patches",
+          "boundary",
+          "mergePatchPairs"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 11,
+        "tool": "gmsh",
+        "query": "Extract boundary patches as physical groups so OpenFOAM sees inlet, outlet, wall",
+        "retrieval_seconds": 0.047,
+        "context_chars": 10270
+      },
+      {
+        "tags_hit": [
+          "gmsh",
+          "python",
+          "Field"
+        ],
+        "tags_missed": [
+          "BoundaryLayer",
+          "addCurveLoop",
+          "synchronize"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 12,
+        "tool": "gmsh",
+        "query": "Use gmsh Python API to mesh a 2D airfoil with boundary layer cells.",
+        "retrieval_seconds": 0.113,
+        "context_chars": 8703
+      },
+      {
+        "tags_hit": [
+          "Mesh",
+          "Part"
+        ],
+        "tags_missed": [
+          "FreeCAD",
+          "STL",
+          "watertight",
+          "ExportSTL",
+          "surfaceMesh"
+        ],
+        "tag_coverage": 0.2857142857142857,
+        "solver_match": 1.0,
+        "score_pct": 42.85714285714286,
+        "idx": 13,
+        "tool": "freecad",
+        "query": "Export a watertight STL of a NACA-0012 airfoil from FreeCAD ready for snappyHexM",
+        "retrieval_seconds": 0.09,
+        "context_chars": 7445
+      },
+      {
+        "tags_hit": [
+          "STEP",
+          "Part",
+          "Mesh"
+        ],
+        "tags_missed": [
+          "defeature",
+          "Draft",
+          "BOPTools",
+          "Refine"
+        ],
+        "tag_coverage": 0.42857142857142855,
+        "solver_match": 1.0,
+        "score_pct": 54.28571428571429,
+        "idx": 14,
+        "tool": "freecad",
+        "query": "Defeature small fillets and holes on an imported STEP body before STL export.",
+        "retrieval_seconds": 0.118,
+        "context_chars": 9155
+      },
+      {
+        "tags_hit": [
+          "FreeCAD",
+          "Part"
+        ],
+        "tags_missed": [
+          "Sketcher",
+          "Pad",
+          "Fillet",
+          "parametric"
+        ],
+        "tag_coverage": 0.3333333333333333,
+        "solver_match": 1.0,
+        "score_pct": 46.666666666666664,
+        "idx": 15,
+        "tool": "freecad",
+        "query": "Generate the geometry of a square duct with rounded corners parametrically in Fr",
+        "retrieval_seconds": 0.101,
+        "context_chars": 8618
+      },
+      {
+        "tags_hit": [
+          "residuals"
+        ],
+        "tags_missed": [
+          "pyFoamPlotWatcher",
+          "pyFoamLogReplay",
+          "ParsedParameterFile",
+          "customRegexp"
+        ],
+        "tag_coverage": 0.2,
+        "solver_match": 1.0,
+        "score_pct": 36.00000000000001,
+        "idx": 16,
+        "tool": "pyfoam",
+        "query": "Use PyFoam to monitor live residuals during a transient run and write them to CS",
+        "retrieval_seconds": 0.091,
+        "context_chars": 6674
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "ParsedParameterFile",
+          "deltaT",
+          "endTime",
+          "controlDict",
+          "writeFile",
+          "header"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 17,
+        "tool": "pyfoam",
+        "query": "Modify deltaT and endTime in controlDict from Python without breaking the FoamFi",
+        "retrieval_seconds": 0.163,
+        "context_chars": 6718
+      },
+      {
+        "tags_hit": [
+          "nu"
+        ],
+        "tags_missed": [
+          "pyFoamRunner",
+          "ParsedParameterFile",
+          "transportProperties",
+          "cloneCase"
+        ],
+        "tag_coverage": 0.2,
+        "solver_match": 0.0,
+        "score_pct": 16.000000000000004,
+        "idx": 18,
+        "tool": "pyfoam",
+        "query": "Loop over a parameter sweep of viscosity values and run icoFoam each time via Py",
+        "retrieval_seconds": 0.08,
+        "context_chars": 10654
+      },
+      {
+        "tags_hit": [
+          "UpdatePipeline",
+          "Show"
+        ],
+        "tags_missed": [
+          "pvpython",
+          "SaveScreenshot",
+          "RenderView",
+          "Slice",
+          "ColorBar"
+        ],
+        "tag_coverage": 0.2857142857142857,
+        "solver_match": 1.0,
+        "score_pct": 42.85714285714286,
+        "idx": 19,
+        "tool": "paraview",
+        "query": "Headless render of U field on a mid-plane slice, save PNG at 1080p with a colour",
+        "retrieval_seconds": 0.048,
+        "context_chars": 9551
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "OpenFOAMReader",
+          "Calculator",
+          "vorticity",
+          "PlotOverLine",
+          "SaveData",
+          "CSVWriter"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 20,
+        "tool": "paraview",
+        "query": "Read OpenFOAM polyMesh, extract vorticity magnitude, save line probe along x at ",
+        "retrieval_seconds": 0.049,
+        "context_chars": 10360
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "Contour",
+          "alpha.water",
+          "AnimationScene",
+          "SaveAnimation",
+          "Iso"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 21,
+        "tool": "paraview",
+        "query": "Animate alpha.water iso-contour at value 0.5 over time and export an MP4.",
+        "retrieval_seconds": 0.05,
+        "context_chars": 8909
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "upwind",
+          "limitedLinear",
+          "numerical diffusion",
+          "TVD",
+          "boundedness",
+          "Gauss"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 22,
+        "tool": "cfd_theory",
+        "query": "Why does upwind divScheme damp diffusion, and when should I switch to limitedLin",
+        "retrieval_seconds": 0.066,
+        "context_chars": 8543
+      },
+      {
+        "tags_hit": [
+          "wallFunction"
+        ],
+        "tags_missed": [
+          "yPlus",
+          "kOmegaSST",
+          "kEpsilon",
+          "viscous sublayer",
+          "first cell height"
+        ],
+        "tag_coverage": 0.16666666666666666,
+        "solver_match": 1.0,
+        "score_pct": 33.333333333333336,
+        "idx": 23,
+        "tool": "cfd_theory",
+        "query": "y+ targets for k-omega SST near-wall vs k-epsilon with wall functions.",
+        "retrieval_seconds": 0.079,
+        "context_chars": 5924
+      },
+      {
+        "tags_hit": [
+          "SIMPLE"
+        ],
+        "tags_missed": [
+          "PISO",
+          "PIMPLE",
+          "transient",
+          "steady",
+          "Courant",
+          "nOuterCorrectors"
+        ],
+        "tag_coverage": 0.14285714285714285,
+        "solver_match": 1.0,
+        "score_pct": 31.428571428571427,
+        "idx": 24,
+        "tool": "cfd_theory",
+        "query": "When to use PISO vs SIMPLE vs PIMPLE: physical and numerical criteria.",
+        "retrieval_seconds": 0.067,
+        "context_chars": 10468
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "Courant",
+          "CFL",
+          "maxCo",
+          "adjustTimeStep",
+          "explicit",
+          "implicit",
+          "interFoam"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 25,
+        "tool": "cfd_theory",
+        "query": "Courant number stability bound for explicit and implicit time stepping in interF",
+        "retrieval_seconds": 0.091,
+        "context_chars": 5871
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "chtMultiRegionFoam",
+          "regionProperties",
+          "constant/fluid",
+          "constant/solid",
+          "turbulentTemperatureCoupledBaffleMixed"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 26,
+        "tool": "openfoam",
+        "query": "Conjugate heat transfer between fluid and solid regions with chtMultiRegionFoam.",
+        "retrieval_seconds": 0.072,
+        "context_chars": 9936
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "wmake",
+          "Make/files",
+          "Make/options",
+          "libuserThermo",
+          "controlDict.libs"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 27,
+        "tool": "openfoam",
+        "query": "Implement a custom thermophysical model by compiling a new library with wmake.",
+        "retrieval_seconds": 0.066,
+        "context_chars": 7092
+      },
+      {
+        "tags_hit": [
+          "adjustTimeStep"
+        ],
+        "tags_missed": [
+          "interFoam",
+          "alpha.water",
+          "MULES",
+          "cAlpha",
+          "maxCo",
+          "subCycles"
+        ],
+        "tag_coverage": 0.14285714285714285,
+        "solver_match": 0.0,
+        "score_pct": 11.428571428571429,
+        "idx": 28,
+        "tool": "openfoam",
+        "query": "Diverging interFoam VOF simulation: residuals oscillating, dam break case.",
+        "retrieval_seconds": 0.139,
+        "context_chars": 6396
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "checkMesh",
+          "non-orthogonality",
+          "skewness",
+          "aspectRatio",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 29,
+        "tool": "meshing",
+        "query": "Check mesh quality with checkMesh and fix high non-orthogonality.",
+        "retrieval_seconds": 0.051,
+        "context_chars": 6319
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "wallShearStress",
+          "yPlus",
+          "functionObjects",
+          "postProcess",
+          "ExtractBlock"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 30,
+        "tool": "paraview",
+        "query": "Compute wall shear stress and y+ on patch walls from a finished simpleFoam run.",
+        "retrieval_seconds": 0.057,
+        "context_chars": 10198
+      }
+    ]
+  },
+  "no_curated_pin": {
+    "overall": 25.473015873015875,
+    "by_tool": {
+      "openfoam": {
+        "n": 8,
+        "mean": 14.976190476190476
+      },
+      "meshing": {
+        "n": 5,
+        "mean": 39.2
+      },
+      "gmsh": {
+        "n": 3,
+        "mean": 33.333333333333336
+      },
+      "freecad": {
+        "n": 3,
+        "mean": 28.253968253968253
+      },
+      "pyfoam": {
+        "n": 3,
+        "mean": 32.00000000000001
+      },
+      "paraview": {
+        "n": 4,
+        "mean": 24.04761904761905
+      },
+      "cfd_theory": {
+        "n": 4,
+        "mean": 17.857142857142858
+      }
+    },
+    "records": [
+      {
+        "tags_hit": [
+          "SIMPLE"
+        ],
+        "tags_missed": [
+          "GAMG",
+          "PCG",
+          "smoothSolver",
+          "residualControl",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tag_coverage": 0.16666666666666666,
+        "solver_match": 0.0,
+        "score_pct": 13.333333333333334,
+        "idx": 1,
+        "tool": "openfoam",
+        "query": "Set up GAMG with PCG for p and smoothSolver for U, residualControl 1e-5 for SIMP",
+        "retrieval_seconds": 1.655,
+        "context_chars": 8059
+      },
+      {
+        "tags_hit": [
+          "PIMPLE"
+        ],
+        "tags_missed": [
+          "rhoPimpleFoam",
+          "kOmegaSST",
+          "compressible",
+          "thermophysicalProperties"
+        ],
+        "tag_coverage": 0.2,
+        "solver_match": 0.0,
+        "score_pct": 16.000000000000004,
+        "idx": 2,
+        "tool": "openfoam",
+        "query": "Compressible high-speed flow over a wedge with k-omega SST and PIMPLE.",
+        "retrieval_seconds": 1.256,
+        "context_chars": 8975
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "icoFoam",
+          "cavity",
+          "movingWall",
+          "fixedValue",
+          "laminar"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 3,
+        "tool": "openfoam",
+        "query": "Lid-driven cavity at Re=100 with icoFoam, 20x20 cells.",
+        "retrieval_seconds": 1.17,
+        "context_chars": 9620
+      },
+      {
+        "tags_hit": [
+          "g"
+        ],
+        "tags_missed": [
+          "interFoam",
+          "alpha.water",
+          "MULES",
+          "cAlpha",
+          "interface"
+        ],
+        "tag_coverage": 0.16666666666666666,
+        "solver_match": 0.0,
+        "score_pct": 13.333333333333334,
+        "idx": 4,
+        "tool": "openfoam",
+        "query": "Multiphase dam break with interFoam, alpha.water = 1 in the column, gravity -9.8",
+        "retrieval_seconds": 1.54,
+        "context_chars": 7964
+      },
+      {
+        "tags_hit": [
+          "g",
+          "gh",
+          "p_rgh"
+        ],
+        "tags_missed": [
+          "buoyantSimpleFoam",
+          "Boussinesq",
+          "beta",
+          "TRef"
+        ],
+        "tag_coverage": 0.42857142857142855,
+        "solver_match": 0.0,
+        "score_pct": 34.285714285714285,
+        "idx": 5,
+        "tool": "openfoam",
+        "query": "Buoyant flow in a heated room with buoyantSimpleFoam and Boussinesq approximatio",
+        "retrieval_seconds": 1.225,
+        "context_chars": 7717
+      },
+      {
+        "tags_hit": [
+          "blockMesh",
+          "blockMeshDict",
+          "vertices",
+          "blocks",
+          "simpleGrading",
+          "edges",
+          "boundary"
+        ],
+        "tags_missed": [],
+        "tag_coverage": 1.0,
+        "solver_match": 1.0,
+        "score_pct": 100.0,
+        "idx": 6,
+        "tool": "meshing",
+        "query": "Block-structured mesh for a backward-facing step, 100x60x1 cells, graded toward ",
+        "retrieval_seconds": 2.796,
+        "context_chars": 6587
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "snappyHexMeshDict",
+          "castellatedMeshControls",
+          "snapControls",
+          "addLayersControls",
+          "refinementSurfaces",
+          "nSurfaceLayers"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 7,
+        "tool": "meshing",
+        "query": "snappyHexMesh setup for a closed STL with refinement level 3 near walls and 5 la",
+        "retrieval_seconds": 1.274,
+        "context_chars": 1676
+      },
+      {
+        "tags_hit": [
+          "empty"
+        ],
+        "tags_missed": [
+          "wedge",
+          "axisymmetric",
+          "symmetryPlane",
+          "extrudeMesh"
+        ],
+        "tag_coverage": 0.2,
+        "solver_match": 1.0,
+        "score_pct": 36.00000000000001,
+        "idx": 8,
+        "tool": "meshing",
+        "query": "Convert a 2D mesh to a wedge for axisymmetric flow with 2.5 degree opening angle",
+        "retrieval_seconds": 1.274,
+        "context_chars": 8682
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "decomposeParDict",
+          "scotch",
+          "numberOfSubdomains",
+          "reconstructPar",
+          "decomposePar"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 9,
+        "tool": "meshing",
+        "query": "Decompose case for 16 processors using scotch and reconstruct after solver finis",
+        "retrieval_seconds": 1.19,
+        "context_chars": 4239
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "Mesh.MshFileVersion",
+          "Physical Surface",
+          "Physical Volume",
+          "gmshToFoam",
+          "characteristic length",
+          "Mesh 3"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 10,
+        "tool": "gmsh",
+        "query": "Generate an unstructured 3D tetrahedral mesh for a cylinder with refinement near",
+        "retrieval_seconds": 1.299,
+        "context_chars": 8795
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "Physical Surface",
+          "gmshToFoam",
+          "patches",
+          "boundary",
+          "mergePatchPairs"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 11,
+        "tool": "gmsh",
+        "query": "Extract boundary patches as physical groups so OpenFOAM sees inlet, outlet, wall",
+        "retrieval_seconds": 1.419,
+        "context_chars": 10046
+      },
+      {
+        "tags_hit": [
+          "gmsh",
+          "python",
+          "Field"
+        ],
+        "tags_missed": [
+          "BoundaryLayer",
+          "addCurveLoop",
+          "synchronize"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 12,
+        "tool": "gmsh",
+        "query": "Use gmsh Python API to mesh a 2D airfoil with boundary layer cells.",
+        "retrieval_seconds": 1.196,
+        "context_chars": 7112
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "FreeCAD",
+          "Mesh",
+          "STL",
+          "watertight",
+          "Part",
+          "ExportSTL",
+          "surfaceMesh"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 13,
+        "tool": "freecad",
+        "query": "Export a watertight STL of a NACA-0012 airfoil from FreeCAD ready for snappyHexM",
+        "retrieval_seconds": 1.368,
+        "context_chars": 8162
+      },
+      {
+        "tags_hit": [
+          "STEP"
+        ],
+        "tags_missed": [
+          "Part",
+          "defeature",
+          "Draft",
+          "BOPTools",
+          "Mesh",
+          "Refine"
+        ],
+        "tag_coverage": 0.14285714285714285,
+        "solver_match": 1.0,
+        "score_pct": 31.428571428571427,
+        "idx": 14,
+        "tool": "freecad",
+        "query": "Defeature small fillets and holes on an imported STEP body before STL export.",
+        "retrieval_seconds": 1.524,
+        "context_chars": 8031
+      },
+      {
+        "tags_hit": [
+          "FreeCAD"
+        ],
+        "tags_missed": [
+          "Part",
+          "Sketcher",
+          "Pad",
+          "Fillet",
+          "parametric"
+        ],
+        "tag_coverage": 0.16666666666666666,
+        "solver_match": 1.0,
+        "score_pct": 33.333333333333336,
+        "idx": 15,
+        "tool": "freecad",
+        "query": "Generate the geometry of a square duct with rounded corners parametrically in Fr",
+        "retrieval_seconds": 1.442,
+        "context_chars": 8808
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "pyFoamPlotWatcher",
+          "pyFoamLogReplay",
+          "ParsedParameterFile",
+          "residuals",
+          "customRegexp"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 16,
+        "tool": "pyfoam",
+        "query": "Use PyFoam to monitor live residuals during a transient run and write them to CS",
+        "retrieval_seconds": 1.347,
+        "context_chars": 8160
+      },
+      {
+        "tags_hit": [
+          "deltaT",
+          "endTime",
+          "controlDict"
+        ],
+        "tags_missed": [
+          "ParsedParameterFile",
+          "writeFile",
+          "header"
+        ],
+        "tag_coverage": 0.5,
+        "solver_match": 1.0,
+        "score_pct": 60.00000000000001,
+        "idx": 17,
+        "tool": "pyfoam",
+        "query": "Modify deltaT and endTime in controlDict from Python without breaking the FoamFi",
+        "retrieval_seconds": 1.267,
+        "context_chars": 8155
+      },
+      {
+        "tags_hit": [
+          "nu"
+        ],
+        "tags_missed": [
+          "pyFoamRunner",
+          "ParsedParameterFile",
+          "transportProperties",
+          "cloneCase"
+        ],
+        "tag_coverage": 0.2,
+        "solver_match": 0.0,
+        "score_pct": 16.000000000000004,
+        "idx": 18,
+        "tool": "pyfoam",
+        "query": "Loop over a parameter sweep of viscosity values and run icoFoam each time via Py",
+        "retrieval_seconds": 1.628,
+        "context_chars": 8623
+      },
+      {
+        "tags_hit": [
+          "pvpython",
+          "Show"
+        ],
+        "tags_missed": [
+          "SaveScreenshot",
+          "RenderView",
+          "Slice",
+          "ColorBar",
+          "UpdatePipeline"
+        ],
+        "tag_coverage": 0.2857142857142857,
+        "solver_match": 1.0,
+        "score_pct": 42.85714285714286,
+        "idx": 19,
+        "tool": "paraview",
+        "query": "Headless render of U field on a mid-plane slice, save PNG at 1080p with a colour",
+        "retrieval_seconds": 1.54,
+        "context_chars": 9217
+      },
+      {
+        "tags_hit": [
+          "OpenFOAMReader"
+        ],
+        "tags_missed": [
+          "Calculator",
+          "vorticity",
+          "PlotOverLine",
+          "SaveData",
+          "CSVWriter"
+        ],
+        "tag_coverage": 0.16666666666666666,
+        "solver_match": 1.0,
+        "score_pct": 33.333333333333336,
+        "idx": 20,
+        "tool": "paraview",
+        "query": "Read OpenFOAM polyMesh, extract vorticity magnitude, save line probe along x at ",
+        "retrieval_seconds": 1.226,
+        "context_chars": 10442
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "Contour",
+          "alpha.water",
+          "AnimationScene",
+          "SaveAnimation",
+          "Iso"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 21,
+        "tool": "paraview",
+        "query": "Animate alpha.water iso-contour at value 0.5 over time and export an MP4.",
+        "retrieval_seconds": 1.173,
+        "context_chars": 10493
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "upwind",
+          "limitedLinear",
+          "numerical diffusion",
+          "TVD",
+          "boundedness",
+          "Gauss"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 22,
+        "tool": "cfd_theory",
+        "query": "Why does upwind divScheme damp diffusion, and when should I switch to limitedLin",
+        "retrieval_seconds": 1.269,
+        "context_chars": 8543
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "yPlus",
+          "kOmegaSST",
+          "kEpsilon",
+          "wallFunction",
+          "viscous sublayer",
+          "first cell height"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 23,
+        "tool": "cfd_theory",
+        "query": "y+ targets for k-omega SST near-wall vs k-epsilon with wall functions.",
+        "retrieval_seconds": 1.508,
+        "context_chars": 7074
+      },
+      {
+        "tags_hit": [
+          "SIMPLE"
+        ],
+        "tags_missed": [
+          "PISO",
+          "PIMPLE",
+          "transient",
+          "steady",
+          "Courant",
+          "nOuterCorrectors"
+        ],
+        "tag_coverage": 0.14285714285714285,
+        "solver_match": 1.0,
+        "score_pct": 31.428571428571427,
+        "idx": 24,
+        "tool": "cfd_theory",
+        "query": "When to use PISO vs SIMPLE vs PIMPLE: physical and numerical criteria.",
+        "retrieval_seconds": 1.215,
+        "context_chars": 8437
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "Courant",
+          "CFL",
+          "maxCo",
+          "adjustTimeStep",
+          "explicit",
+          "implicit",
+          "interFoam"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 25,
+        "tool": "cfd_theory",
+        "query": "Courant number stability bound for explicit and implicit time stepping in interF",
+        "retrieval_seconds": 1.222,
+        "context_chars": 7107
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "chtMultiRegionFoam",
+          "regionProperties",
+          "constant/fluid",
+          "constant/solid",
+          "turbulentTemperatureCoupledBaffleMixed"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 26,
+        "tool": "openfoam",
+        "query": "Conjugate heat transfer between fluid and solid regions with chtMultiRegionFoam.",
+        "retrieval_seconds": 1.461,
+        "context_chars": 9600
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "wmake",
+          "Make/files",
+          "Make/options",
+          "libuserThermo",
+          "controlDict.libs"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 27,
+        "tool": "openfoam",
+        "query": "Implement a custom thermophysical model by compiling a new library with wmake.",
+        "retrieval_seconds": 1.335,
+        "context_chars": 8098
+      },
+      {
+        "tags_hit": [
+          "maxCo",
+          "adjustTimeStep"
+        ],
+        "tags_missed": [
+          "interFoam",
+          "alpha.water",
+          "MULES",
+          "cAlpha",
+          "subCycles"
+        ],
+        "tag_coverage": 0.2857142857142857,
+        "solver_match": 0.0,
+        "score_pct": 22.857142857142858,
+        "idx": 28,
+        "tool": "openfoam",
+        "query": "Diverging interFoam VOF simulation: residuals oscillating, dam break case.",
+        "retrieval_seconds": 1.828,
+        "context_chars": 7939
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "checkMesh",
+          "non-orthogonality",
+          "skewness",
+          "aspectRatio",
+          "nNonOrthogonalCorrectors"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 1.0,
+        "score_pct": 20.0,
+        "idx": 29,
+        "tool": "meshing",
+        "query": "Check mesh quality with checkMesh and fix high non-orthogonality.",
+        "retrieval_seconds": 1.354,
+        "context_chars": 5235
+      },
+      {
+        "tags_hit": [],
+        "tags_missed": [
+          "wallShearStress",
+          "yPlus",
+          "functionObjects",
+          "postProcess",
+          "ExtractBlock"
+        ],
+        "tag_coverage": 0.0,
+        "solver_match": 0.0,
+        "score_pct": 0.0,
+        "idx": 30,
+        "tool": "paraview",
+        "query": "Compute wall shear stress and y+ on patch walls from a finished simpleFoam run.",
+        "retrieval_seconds": 1.143,
+        "context_chars": 9057
+      }
+    ]
+  }
+}

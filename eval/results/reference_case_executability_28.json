@@ -1,0 +1,563 @@
+[
+  {
+    "case_id": "A1",
+    "solver": "icoFoam",
+    "runs_subdir": "cavity",
+    "score": 3,
+    "elapsed_s": 3.9,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": ", Final residual = 5.0684e-07, No Iterations 0\nDICPCG:  Solving for p, Initial residual = 8.63844e-07, Final residual = 8.63844e-07, No Iterations 0\ntime step continuity errors : sum local = 8.8828e-09, global = 4.94571e-19, cumulative = 1.10417e-17\nDICPCG:  Solving for p, Initial residual = 9.59103e-07, Final residual = 9.59103e-07, No Iterations 0\ntime step continuity errors : sum local = 9.66354e-09, global = 1.13175e-18, cumulative = 1.21735e-17\nExecutionTime = 0.07 s  ClockTime = 0 s\n\nEnd\n\n",
+      "key_hits": [],
+      "key_misses": [
+        "codedfixedvalue"
+      ]
+    }
+  },
+  {
+    "case_id": "A2",
+    "solver": "simpleFoam",
+    "runs_subdir": "pitzDaily",
+    "score": 3,
+    "elapsed_s": 9.4,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "e step continuity errors : sum local = 0.00338164, global = -0.000238424, cumulative = 1.00635\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000120858, Final residual = 6.88789e-06, No Iterations 3\nsmoothSolver:  Solving for k, Initial residual = 0.000226125, Final residual = 1.42193e-05, No Iterations 4\nExecutionTime = 5.3 s  ClockTime = 6 s\n\n\nSIMPLE solution converged in 281 iterations\n\nstreamLine streamlines write:\n    seeded 10 particles\n    Tracks:10\n    Total samples:10885\nEnd\n\n",
+      "key_hits": [
+        "turbulenceproperties"
+      ],
+      "key_misses": [
+        "rasmodel kepsilon;"
+      ]
+    }
+  },
+  {
+    "case_id": "A3",
+    "solver": "buoyantBoussinesqSimpleFoam",
+    "runs_subdir": "hotRoom",
+    "score": 4,
+    "elapsed_s": 10.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "00047417, No Iterations 1\nDICPCG:  Solving for p_rgh, Initial residual = 0.021944, Final residual = 0.00016267, No Iterations 11\ntime step continuity errors : sum local = 6.05984e-06, global = -1.14112e-19, cumulative = 9.62358e-19\nDILUPBiCGStab:  Solving for epsilon, Initial residual = 0.00399823, Final residual = 0.000256948, No Iterations 1\nDILUPBiCGStab:  Solving for k, Initial residual = 0.00968484, Final residual = 0.000781722, No Iterations 1\nExecutionTime = 6.57 s  ClockTime = 6 s\n\nEnd\n\n",
+      "key_hits": [
+        "g",
+        "(0 -9.81 0)"
+      ],
+      "key_misses": []
+    }
+  },
+  {
+    "case_id": "A4",
+    "solver": "interFoam",
+    "runs_subdir": "damBreak",
+    "score": 4,
+    "elapsed_s": 9.2,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "al = -3.3646e-05, cumulative = 0.00403976\nDICPCG:  Solving for p_rgh, Initial residual = 0.00158704, Final residual = 6.59532e-05, No Iterations 18\ntime step continuity errors : sum local = 7.95102e-05, global = 2.63189e-06, cumulative = 0.00404239\nDICPCG:  Solving for p_rgh, Initial residual = 0.000298713, Final residual = 6.1203e-08, No Iterations 49\ntime step continuity errors : sum local = 7.4166e-08, global = 6.31263e-09, cumulative = 0.0040424\nExecutionTime = 3.28 s  ClockTime = 4 s\n\nEnd\n\n",
+      "key_hits": [
+        "setfieldsdict",
+        "boxtocell"
+      ],
+      "key_misses": []
+    }
+  },
+  {
+    "case_id": "A5",
+    "solver": "MPPICFoam",
+    "runs_subdir": "particleColumn",
+    "score": 3,
+    "elapsed_s": 31.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": " 5.3886611e-11, No Iterations 1\nGAMG:  Solving for p, Initial residual = 0.75723848, Final residual = 0.0066612262, No Iterations 3\ntime step continuity errors : sum local = 2.6968311e-05, global = 3.4650893e-18, cumulative = 6.7643215e-17\nGAMG:  Solving for p, Initial residual = 0.0076194705, Final residual = 6.3872651e-07, No Iterations 12\ntime step continuity errors : sum local = 2.0048348e-09, global = 3.4401581e-18, cumulative = 7.1083374e-17\nExecutionTime = 27.45 s  ClockTime = 28 s\n\nEnd\n\n",
+      "key_hits": [
+        "packingmodel"
+      ],
+      "key_misses": [
+        "mppiccloud"
+      ]
+    }
+  },
+  {
+    "case_id": "A6",
+    "solver": "simpleFoam",
+    "runs_subdir": "mixerVessel",
+    "score": 3,
+    "elapsed_s": 5.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": " 1.27989e-06, No Iterations 2\nGAMG:  Solving for p, Initial residual = 0.000356152, Final residual = 1.29205e-05, No Iterations 2\ntime step continuity errors : sum local = 0.00034809, global = -2.27107e-16, cumulative = 9.89068e-16\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000203131, Final residual = 1.50399e-05, No Iterations 2\nsmoothSolver:  Solving for k, Initial residual = 0.000379367, Final residual = 3.35229e-05, No Iterations 2\nExecutionTime = 1.69 s  ClockTime = 2 s\n\nEnd\n\n",
+      "key_hits": [
+        "omega"
+      ],
+      "key_misses": [
+        "mrfzonelist"
+      ]
+    }
+  },
+  {
+    "case_id": "B1",
+    "solver": "simpleFoam",
+    "runs_subdir": "pitzDaily",
+    "score": 3,
+    "elapsed_s": 9.4,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "e step continuity errors : sum local = 0.00338164, global = -0.000238424, cumulative = 1.00635\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000120858, Final residual = 6.88789e-06, No Iterations 3\nsmoothSolver:  Solving for k, Initial residual = 0.000226125, Final residual = 1.42193e-05, No Iterations 4\nExecutionTime = 5.3 s  ClockTime = 6 s\n\n\nSIMPLE solution converged in 281 iterations\n\nstreamLine streamlines write:\n    seeded 10 particles\n    Tracks:10\n    Total samples:10885\nEnd\n\n",
+      "key_hits": [
+        "turbulenceproperties"
+      ],
+      "key_misses": [
+        "rasmodel kepsilon;"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "B2",
+    "solver": "buoyantBoussinesqSimpleFoam",
+    "runs_subdir": "hotRoom",
+    "score": 4,
+    "elapsed_s": 10.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "00047417, No Iterations 1\nDICPCG:  Solving for p_rgh, Initial residual = 0.021944, Final residual = 0.00016267, No Iterations 11\ntime step continuity errors : sum local = 6.05984e-06, global = -1.14112e-19, cumulative = 9.62358e-19\nDILUPBiCGStab:  Solving for epsilon, Initial residual = 0.00399823, Final residual = 0.000256948, No Iterations 1\nDILUPBiCGStab:  Solving for k, Initial residual = 0.00968484, Final residual = 0.000781722, No Iterations 1\nExecutionTime = 6.57 s  ClockTime = 6 s\n\nEnd\n\n",
+      "key_hits": [
+        "g",
+        "(0 -9.81 0)"
+      ],
+      "key_misses": []
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "B3",
+    "solver": "icoFoam",
+    "runs_subdir": "cavity",
+    "score": 3,
+    "elapsed_s": 3.9,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": ", Final residual = 5.0684e-07, No Iterations 0\nDICPCG:  Solving for p, Initial residual = 8.63844e-07, Final residual = 8.63844e-07, No Iterations 0\ntime step continuity errors : sum local = 8.8828e-09, global = 4.94571e-19, cumulative = 1.10417e-17\nDICPCG:  Solving for p, Initial residual = 9.59103e-07, Final residual = 9.59103e-07, No Iterations 0\ntime step continuity errors : sum local = 9.66354e-09, global = 1.13175e-18, cumulative = 1.21735e-17\nExecutionTime = 0.07 s  ClockTime = 0 s\n\nEnd\n\n",
+      "key_hits": [],
+      "key_misses": [
+        "codedfixedvalue"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "B4",
+    "solver": "interFoam",
+    "runs_subdir": "damBreak",
+    "score": 4,
+    "elapsed_s": 9.2,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "al = -3.3646e-05, cumulative = 0.00403976\nDICPCG:  Solving for p_rgh, Initial residual = 0.00158704, Final residual = 6.59532e-05, No Iterations 18\ntime step continuity errors : sum local = 7.95102e-05, global = 2.63189e-06, cumulative = 0.00404239\nDICPCG:  Solving for p_rgh, Initial residual = 0.000298713, Final residual = 6.1203e-08, No Iterations 49\ntime step continuity errors : sum local = 7.4166e-08, global = 6.31263e-09, cumulative = 0.0040424\nExecutionTime = 3.28 s  ClockTime = 4 s\n\nEnd\n\n",
+      "key_hits": [
+        "setfieldsdict",
+        "boxtocell"
+      ],
+      "key_misses": []
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C1",
+    "solver": "icoFoam",
+    "runs_subdir": "cavity",
+    "score": 3,
+    "elapsed_s": 3.9,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": ", Final residual = 5.0684e-07, No Iterations 0\nDICPCG:  Solving for p, Initial residual = 8.63844e-07, Final residual = 8.63844e-07, No Iterations 0\ntime step continuity errors : sum local = 8.8828e-09, global = 4.94571e-19, cumulative = 1.10417e-17\nDICPCG:  Solving for p, Initial residual = 9.59103e-07, Final residual = 9.59103e-07, No Iterations 0\ntime step continuity errors : sum local = 9.66354e-09, global = 1.13175e-18, cumulative = 1.21735e-17\nExecutionTime = 0.07 s  ClockTime = 0 s\n\nEnd\n\n",
+      "key_hits": [],
+      "key_misses": [
+        "codedfixedvalue"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C2",
+    "solver": "icoFoam",
+    "runs_subdir": "cavity",
+    "score": 3,
+    "elapsed_s": 3.9,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": ", Final residual = 5.0684e-07, No Iterations 0\nDICPCG:  Solving for p, Initial residual = 8.63844e-07, Final residual = 8.63844e-07, No Iterations 0\ntime step continuity errors : sum local = 8.8828e-09, global = 4.94571e-19, cumulative = 1.10417e-17\nDICPCG:  Solving for p, Initial residual = 9.59103e-07, Final residual = 9.59103e-07, No Iterations 0\ntime step continuity errors : sum local = 9.66354e-09, global = 1.13175e-18, cumulative = 1.21735e-17\nExecutionTime = 0.07 s  ClockTime = 0 s\n\nEnd\n\n",
+      "key_hits": [],
+      "key_misses": [
+        "codedfixedvalue"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C3",
+    "solver": "icoFoam",
+    "runs_subdir": "cavity",
+    "score": 3,
+    "elapsed_s": 3.9,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": ", Final residual = 5.0684e-07, No Iterations 0\nDICPCG:  Solving for p, Initial residual = 8.63844e-07, Final residual = 8.63844e-07, No Iterations 0\ntime step continuity errors : sum local = 8.8828e-09, global = 4.94571e-19, cumulative = 1.10417e-17\nDICPCG:  Solving for p, Initial residual = 9.59103e-07, Final residual = 9.59103e-07, No Iterations 0\ntime step continuity errors : sum local = 9.66354e-09, global = 1.13175e-18, cumulative = 1.21735e-17\nExecutionTime = 0.07 s  ClockTime = 0 s\n\nEnd\n\n",
+      "key_hits": [],
+      "key_misses": [
+        "codedfixedvalue"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C4",
+    "solver": "buoyantBoussinesqSimpleFoam",
+    "runs_subdir": "hotRoom",
+    "score": 4,
+    "elapsed_s": 10.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "00047417, No Iterations 1\nDICPCG:  Solving for p_rgh, Initial residual = 0.021944, Final residual = 0.00016267, No Iterations 11\ntime step continuity errors : sum local = 6.05984e-06, global = -1.14112e-19, cumulative = 9.62358e-19\nDILUPBiCGStab:  Solving for epsilon, Initial residual = 0.00399823, Final residual = 0.000256948, No Iterations 1\nDILUPBiCGStab:  Solving for k, Initial residual = 0.00968484, Final residual = 0.000781722, No Iterations 1\nExecutionTime = 6.57 s  ClockTime = 6 s\n\nEnd\n\n",
+      "key_hits": [
+        "g",
+        "(0 -9.81 0)"
+      ],
+      "key_misses": []
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C5",
+    "solver": "buoyantBoussinesqSimpleFoam",
+    "runs_subdir": "hotRoom",
+    "score": 4,
+    "elapsed_s": 10.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "00047417, No Iterations 1\nDICPCG:  Solving for p_rgh, Initial residual = 0.021944, Final residual = 0.00016267, No Iterations 11\ntime step continuity errors : sum local = 6.05984e-06, global = -1.14112e-19, cumulative = 9.62358e-19\nDILUPBiCGStab:  Solving for epsilon, Initial residual = 0.00399823, Final residual = 0.000256948, No Iterations 1\nDILUPBiCGStab:  Solving for k, Initial residual = 0.00968484, Final residual = 0.000781722, No Iterations 1\nExecutionTime = 6.57 s  ClockTime = 6 s\n\nEnd\n\n",
+      "key_hits": [
+        "g",
+        "(0 -9.81 0)"
+      ],
+      "key_misses": []
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C6",
+    "solver": "interFoam",
+    "runs_subdir": "damBreak",
+    "score": 4,
+    "elapsed_s": 9.2,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "al = -3.3646e-05, cumulative = 0.00403976\nDICPCG:  Solving for p_rgh, Initial residual = 0.00158704, Final residual = 6.59532e-05, No Iterations 18\ntime step continuity errors : sum local = 7.95102e-05, global = 2.63189e-06, cumulative = 0.00404239\nDICPCG:  Solving for p_rgh, Initial residual = 0.000298713, Final residual = 6.1203e-08, No Iterations 49\ntime step continuity errors : sum local = 7.4166e-08, global = 6.31263e-09, cumulative = 0.0040424\nExecutionTime = 3.28 s  ClockTime = 4 s\n\nEnd\n\n",
+      "key_hits": [
+        "setfieldsdict",
+        "boxtocell"
+      ],
+      "key_misses": []
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C7",
+    "solver": "interFoam",
+    "runs_subdir": "damBreak",
+    "score": 4,
+    "elapsed_s": 9.2,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "al = -3.3646e-05, cumulative = 0.00403976\nDICPCG:  Solving for p_rgh, Initial residual = 0.00158704, Final residual = 6.59532e-05, No Iterations 18\ntime step continuity errors : sum local = 7.95102e-05, global = 2.63189e-06, cumulative = 0.00404239\nDICPCG:  Solving for p_rgh, Initial residual = 0.000298713, Final residual = 6.1203e-08, No Iterations 49\ntime step continuity errors : sum local = 7.4166e-08, global = 6.31263e-09, cumulative = 0.0040424\nExecutionTime = 3.28 s  ClockTime = 4 s\n\nEnd\n\n",
+      "key_hits": [
+        "setfieldsdict",
+        "boxtocell"
+      ],
+      "key_misses": []
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C8",
+    "solver": "MPPICFoam",
+    "runs_subdir": "particleColumn",
+    "score": 3,
+    "elapsed_s": 31.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": " 5.3886611e-11, No Iterations 1\nGAMG:  Solving for p, Initial residual = 0.75723848, Final residual = 0.0066612262, No Iterations 3\ntime step continuity errors : sum local = 2.6968311e-05, global = 3.4650893e-18, cumulative = 6.7643215e-17\nGAMG:  Solving for p, Initial residual = 0.0076194705, Final residual = 6.3872651e-07, No Iterations 12\ntime step continuity errors : sum local = 2.0048348e-09, global = 3.4401581e-18, cumulative = 7.1083374e-17\nExecutionTime = 27.45 s  ClockTime = 28 s\n\nEnd\n\n",
+      "key_hits": [
+        "packingmodel"
+      ],
+      "key_misses": [
+        "mppiccloud"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C9",
+    "solver": "simpleFoam",
+    "runs_subdir": "mixerVessel",
+    "score": 3,
+    "elapsed_s": 5.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": " 1.27989e-06, No Iterations 2\nGAMG:  Solving for p, Initial residual = 0.000356152, Final residual = 1.29205e-05, No Iterations 2\ntime step continuity errors : sum local = 0.00034809, global = -2.27107e-16, cumulative = 9.89068e-16\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000203131, Final residual = 1.50399e-05, No Iterations 2\nsmoothSolver:  Solving for k, Initial residual = 0.000379367, Final residual = 3.35229e-05, No Iterations 2\nExecutionTime = 1.69 s  ClockTime = 2 s\n\nEnd\n\n",
+      "key_hits": [
+        "omega"
+      ],
+      "key_misses": [
+        "mrfzonelist"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "C10",
+    "solver": "simpleFoam",
+    "runs_subdir": "pitzDaily",
+    "score": 3,
+    "elapsed_s": 9.4,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "e step continuity errors : sum local = 0.00338164, global = -0.000238424, cumulative = 1.00635\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000120858, Final residual = 6.88789e-06, No Iterations 3\nsmoothSolver:  Solving for k, Initial residual = 0.000226125, Final residual = 1.42193e-05, No Iterations 4\nExecutionTime = 5.3 s  ClockTime = 6 s\n\n\nSIMPLE solution converged in 281 iterations\n\nstreamLine streamlines write:\n    seeded 10 particles\n    Tracks:10\n    Total samples:10885\nEnd\n\n",
+      "key_hits": [
+        "turbulenceproperties"
+      ],
+      "key_misses": [
+        "rasmodel kepsilon;"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "D1",
+    "solver": "simpleFoam",
+    "runs_subdir": "pitzDaily",
+    "score": 3,
+    "elapsed_s": 9.4,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "e step continuity errors : sum local = 0.00338164, global = -0.000238424, cumulative = 1.00635\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000120858, Final residual = 6.88789e-06, No Iterations 3\nsmoothSolver:  Solving for k, Initial residual = 0.000226125, Final residual = 1.42193e-05, No Iterations 4\nExecutionTime = 5.3 s  ClockTime = 6 s\n\n\nSIMPLE solution converged in 281 iterations\n\nstreamLine streamlines write:\n    seeded 10 particles\n    Tracks:10\n    Total samples:10885\nEnd\n\n",
+      "key_hits": [
+        "turbulenceproperties"
+      ],
+      "key_misses": [
+        "rasmodel kepsilon;"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "D2",
+    "solver": "simpleFoam",
+    "runs_subdir": "pitzDaily",
+    "score": 3,
+    "elapsed_s": 9.4,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "e step continuity errors : sum local = 0.00338164, global = -0.000238424, cumulative = 1.00635\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000120858, Final residual = 6.88789e-06, No Iterations 3\nsmoothSolver:  Solving for k, Initial residual = 0.000226125, Final residual = 1.42193e-05, No Iterations 4\nExecutionTime = 5.3 s  ClockTime = 6 s\n\n\nSIMPLE solution converged in 281 iterations\n\nstreamLine streamlines write:\n    seeded 10 particles\n    Tracks:10\n    Total samples:10885\nEnd\n\n",
+      "key_hits": [
+        "turbulenceproperties"
+      ],
+      "key_misses": [
+        "rasmodel kepsilon;"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "D3",
+    "solver": "simpleFoam",
+    "runs_subdir": "pitzDaily",
+    "score": 3,
+    "elapsed_s": 9.4,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "e step continuity errors : sum local = 0.00338164, global = -0.000238424, cumulative = 1.00635\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000120858, Final residual = 6.88789e-06, No Iterations 3\nsmoothSolver:  Solving for k, Initial residual = 0.000226125, Final residual = 1.42193e-05, No Iterations 4\nExecutionTime = 5.3 s  ClockTime = 6 s\n\n\nSIMPLE solution converged in 281 iterations\n\nstreamLine streamlines write:\n    seeded 10 particles\n    Tracks:10\n    Total samples:10885\nEnd\n\n",
+      "key_hits": [
+        "turbulenceproperties"
+      ],
+      "key_misses": [
+        "rasmodel kepsilon;"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "D4",
+    "solver": "simpleFoam",
+    "runs_subdir": "pitzDaily",
+    "score": 3,
+    "elapsed_s": 9.4,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "e step continuity errors : sum local = 0.00338164, global = -0.000238424, cumulative = 1.00635\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000120858, Final residual = 6.88789e-06, No Iterations 3\nsmoothSolver:  Solving for k, Initial residual = 0.000226125, Final residual = 1.42193e-05, No Iterations 4\nExecutionTime = 5.3 s  ClockTime = 6 s\n\n\nSIMPLE solution converged in 281 iterations\n\nstreamLine streamlines write:\n    seeded 10 particles\n    Tracks:10\n    Total samples:10885\nEnd\n\n",
+      "key_hits": [
+        "turbulenceproperties"
+      ],
+      "key_misses": [
+        "rasmodel kepsilon;"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "D5",
+    "solver": "icoFoam",
+    "runs_subdir": "cavity",
+    "score": 3,
+    "elapsed_s": 3.9,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": ", Final residual = 5.0684e-07, No Iterations 0\nDICPCG:  Solving for p, Initial residual = 8.63844e-07, Final residual = 8.63844e-07, No Iterations 0\ntime step continuity errors : sum local = 8.8828e-09, global = 4.94571e-19, cumulative = 1.10417e-17\nDICPCG:  Solving for p, Initial residual = 9.59103e-07, Final residual = 9.59103e-07, No Iterations 0\ntime step continuity errors : sum local = 9.66354e-09, global = 1.13175e-18, cumulative = 1.21735e-17\nExecutionTime = 0.07 s  ClockTime = 0 s\n\nEnd\n\n",
+      "key_hits": [],
+      "key_misses": [
+        "codedfixedvalue"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "D6",
+    "solver": "simpleFoam",
+    "runs_subdir": "pitzDaily",
+    "score": 3,
+    "elapsed_s": 9.4,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "e step continuity errors : sum local = 0.00338164, global = -0.000238424, cumulative = 1.00635\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000120858, Final residual = 6.88789e-06, No Iterations 3\nsmoothSolver:  Solving for k, Initial residual = 0.000226125, Final residual = 1.42193e-05, No Iterations 4\nExecutionTime = 5.3 s  ClockTime = 6 s\n\n\nSIMPLE solution converged in 281 iterations\n\nstreamLine streamlines write:\n    seeded 10 particles\n    Tracks:10\n    Total samples:10885\nEnd\n\n",
+      "key_hits": [
+        "turbulenceproperties"
+      ],
+      "key_misses": [
+        "rasmodel kepsilon;"
+      ]
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "D7",
+    "solver": "buoyantBoussinesqSimpleFoam",
+    "runs_subdir": "hotRoom",
+    "score": 4,
+    "elapsed_s": 10.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": "00047417, No Iterations 1\nDICPCG:  Solving for p_rgh, Initial residual = 0.021944, Final residual = 0.00016267, No Iterations 11\ntime step continuity errors : sum local = 6.05984e-06, global = -1.14112e-19, cumulative = 9.62358e-19\nDILUPBiCGStab:  Solving for epsilon, Initial residual = 0.00399823, Final residual = 0.000256948, No Iterations 1\nDILUPBiCGStab:  Solving for k, Initial residual = 0.00968484, Final residual = 0.000781722, No Iterations 1\nExecutionTime = 6.57 s  ClockTime = 6 s\n\nEnd\n\n",
+      "key_hits": [
+        "g",
+        "(0 -9.81 0)"
+      ],
+      "key_misses": []
+    },
+    "from_cache": true
+  },
+  {
+    "case_id": "D8",
+    "solver": "simpleFoam",
+    "runs_subdir": "mixerVessel",
+    "score": 3,
+    "elapsed_s": 5.6,
+    "evidence": {
+      "mesh_files": true,
+      "blockmesh_end": true,
+      "solver_ran_to_end": true,
+      "solver_fatal": false,
+      "log_tail": " 1.27989e-06, No Iterations 2\nGAMG:  Solving for p, Initial residual = 0.000356152, Final residual = 1.29205e-05, No Iterations 2\ntime step continuity errors : sum local = 0.00034809, global = -2.27107e-16, cumulative = 9.89068e-16\nsmoothSolver:  Solving for epsilon, Initial residual = 0.000203131, Final residual = 1.50399e-05, No Iterations 2\nsmoothSolver:  Solving for k, Initial residual = 0.000379367, Final residual = 3.35229e-05, No Iterations 2\nExecutionTime = 1.69 s  ClockTime = 2 s\n\nEnd\n\n",
+      "key_hits": [
+        "omega"
+      ],
+      "key_misses": [
+        "mrfzonelist"
+      ]
+    },
+    "from_cache": true
+  }
+]
