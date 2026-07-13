@@ -23,10 +23,5 @@
     "benchmark",
     "reproducibility"
   ],
-  "notes": "Artefact snapshot as reviewed at submission to Computer Physics Communications. The retrieval engine described in the manuscript is proprietary and is not part of this deposit.",
-  "grants": [
-    {
-      "id": "10.13039/501100001711::234158"
-    }
-  ]
+  "notes": "Artefact snapshot as reviewed at submission to Computer Physics Communications. The retrieval engine described in the manuscript is proprietary and is not part of this deposit. Funded by the Swiss National Science Foundation (SNSF), Swiss Postdoctoral Fellowship, grant 234158."
 }
