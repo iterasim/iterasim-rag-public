@@ -1,0 +1,32 @@
+{
+  "upload_type": "software",
+  "title": "IteraSim RAG: benchmark and evaluation kit for retrieval-augmented agentic OpenFOAM case generation",
+  "description": "<p>Benchmark and evaluation artefacts accompanying the manuscript <em>\"IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End for OpenFOAM-Based Computational Fluid Dynamics\"</em> (submitted to <em>Computer Physics Communications</em>).</p><p>Contents:</p><ul><li>28-case OpenFOAM retrieval benchmark (Categories A&ndash;D: zero-shot setup, few-shot generalisation, single-parameter modification, turbulence-model swap), with the natural-language prompt, expected solver, expected dictionaries, key-checks and physics tags for every case. A further 8 Category&nbsp;E diagnostic queries are shipped but are not scored in the paper.</li><li>Retrieval-tier scoring rubric and benchmark parser.</li><li>Four Reviewer-loop <code>FOAM FATAL</code> probes (two measured, two constructed): intentionally corrupted OpenFOAM cases with their captured FATAL logs and the expected repaired artefacts.</li><li>Leave-one-out ablation records: 30 retrieval queries scored under 5 pipeline configurations (full, &minus;version-filter, &minus;MMR, &minus;multi-query, &minus;canonical), with per-query scores.</li><li>Reference-case executability records for the 28 base configurations on OpenFOAM v2506.</li><li>End-to-end reference-vs-RAG lid-driven cavity kit.</li><li>Figure-regeneration scripts for the figures in the paper.</li></ul><p><strong>Not included:</strong> the IteraSim RAG retrieval engine, the Architect&ndash;InputWriter&ndash;Reviewer orchestrator, the canonical-knowledge layer contents and the ingestion pipeline. These are the commercial intellectual property of IteraSim and are not redistributed. The released artefacts are independent of them and allow the reported evaluation to be inspected and reproduced against any RAG back-end.</p>",
+  "license": "MIT",
+  "access_right": "open",
+  "version": "v1.0-submission",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Kumar, Pratyush",
+      "affiliation": "Seminar for Applied Mathematics, ETH Zürich, Switzerland",
+      "orcid": "0000-0002-4168-6534"
+    }
+  ],
+  "keywords": [
+    "retrieval-augmented generation",
+    "large language models",
+    "multi-agent systems",
+    "computational fluid dynamics",
+    "OpenFOAM",
+    "scientific software automation",
+    "benchmark",
+    "reproducibility"
+  ],
+  "notes": "Artefact snapshot as reviewed at submission to Computer Physics Communications. The retrieval engine described in the manuscript is proprietary and is not part of this deposit.",
+  "grants": [
+    {
+      "id": "10.13039/501100001711::234158"
+    }
+  ]
+}
